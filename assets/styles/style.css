@@ -530,4 +530,7 @@ div.dropdown-show{
     color: wheat;
     border: 2px solid wheat;
 }
+.countt{
+    display: flex;
+}
 
