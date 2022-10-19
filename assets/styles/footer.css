@@ -1,0 +1,44 @@
+.footer{
+    background-color: black;
+    padding: 70px 0;
+ }
+ .footercontainer{
+    max-width: 85%;
+
+    margin: auto;
+
+ }
+
+ ul{
+    list-style: none;
+
+ }
+
+ .frow{
+    display: flex;
+    flex-wrap: wrap;
+ }
+
+ div.fcol{
+    width: 25%;
+
+}
+.logoo{
+    width: 30%;
+}
+.fcol ul li a{
+    text-transform: capitalize;
+    text-decoration: none;
+    color: white;
+    line-height: 2.5;
+}
+h2{
+    color: wheat;
+    padding-left: 40px;
+    font-size: 35px;
+}
+
+.fcol > ul > li > a:hover{ 
+    border-bottom: 1px white solid;
+    
+}

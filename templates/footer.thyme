@@ -1,0 +1,81 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<link th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')" th:href="${rootpath}+'styles/style.css?v=2.6'" rel="stylesheet" />
+    <body>
+        <div th:fragment="footer">
+        <footer class="footer">
+        <div class="footercontainer">
+            <div class="frow">
+                <div class="fcol">
+                    <h2><img class="logoo" src="/pics/logo.webp"></h2>
+                    <ul>
+                        <li><a href="">About Us</a>
+                        <li><a href="">Terms & Conditions</a>
+                        <li><a href="">Privacy Policy</a>
+                    </ul>
+                </div>
+
+
+
+                <div class="fcol">
+                    <h2>Products</h2>
+                    <ul>
+                        <li><a href="">Whois Lookup API</a>
+                        <li><a href="">Whois History API</a>
+                        <li><a href="">Reverse Whois API</a>
+                        <li><a href="">Domain Availability API</a>
+                        <li><a href="">Bulk Whois Lookup</a>
+                        <li><a href="">Newly Registered Domains</a>
+                        <li><a href="">Expiring & Dropped Domains</a>
+                        <li><a href="">WHOIS Domains Database</a>
+                    </ul>
+                </div>
+
+
+
+                <div class="fcol">
+                    <h2>Documentation</h2>
+                    <ul>
+                        <li><a href="">Whois Lookup API</a>
+                        <li><a href="">Whois History API</a>
+                        <li><a href="">Reverse Whois API</a>
+                        <li><a href="">Domain Availability API</a>
+                        <li><a href="">Bulk Domain Availability API</a>
+                        <li><a href="">Bulk Whois Lookup</a>
+                        <li><a href="">Newly Registered Domains</a>
+                        <li><a href="">Expiring Domains</a>
+                        <li><a href="">Dropped/Deleted Domains</a>
+                        <li><a href="">Whois Database Subscription</a>
+                        <li><a href="">Whois Database Subscription</a>
+                    </ul>
+                </div>
+
+
+
+                <div class="fcol">
+                    <h2>Pricing & Accounts</h2>
+                    <ul>
+                        <li><a href="">Pricing</a>
+                        <li><a href="">Supported TLDs</a>
+                        <li><a href="">Update Schedule TLDs</a>
+                        <li><a href="">Sign In</a>
+                        <li><a href="">Contact Us</a>
+                        <li><a href="">Site Map</a>
+                        <li><a href="">Site Map</a>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="frow">
+
+                    <p style="color: white; margin: auto; padding-top: 40px;">Copyright © 2022 WhoisFreaks. Made with ♥ in Pakistan <img src="/pics/pakistan-flag.gif"></p>
+
+
+            </div>
+        </div>
+    </footer>
+
+        </div>
+  	</body>
+</html>
