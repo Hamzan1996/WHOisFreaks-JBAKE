@@ -34,6 +34,9 @@
 	<body>
 		<div>
 <header>
+<body>
+    <div class="navcontainer">
+    <header>
         <a href="index.html" class="logo"><img id="logo" src="/pics/logo.webp" alt="WHOIS"></a>
 
         <input type="checkbox" id="menu-bar">
@@ -41,83 +44,89 @@
     
         <nav class="navbar">
                 <ul>
-                    <li id="nav-links"><a href="">Products ˅</a>
-                        <ul>
-                            <li><h3>APIs</h3> </li>
-                            <li><a>Whois Lookup API</a></li>                           
-                            <li><a>Whois History API</a></li>
-                            <li><a>Whois API</a></li>
-                            <li><a>Domanin availability API</a></li>
-                            <li><a>Bulk Domanin availability API</a></li>
-                            <li><a>Newly registered domains</a></li>
-                            <li><h3>Utility</h3></li>
-                            <li><a>Bulk WHOIS Lookup</a></li>
-                            <li><h3>Databases</h3></li>
-                            <li><a>Bulk WHOIS Lookup</a></li>
+                    <li class="nav-links"><button onclick="showdrp()">Products ⌄</button>
+                        <ul class="drp-dwn" id="productss">
+                            <li class="nav-content"><h3>APIs</h3> </li>
+                            <li class="nav-content"><a>Whois Lookup API</a></li>                           
+                            <li class="nav-content"><a>Whois History API</a></li>
+                            <li class="nav-content"><a>Whois API</a></li>
+                            <li class="nav-content"><a>Domanin availability API</a></li>
+                            <li class="nav-content"><a>Bulk Domanin availability API</a></li>
+                            <li class="nav-content"><a>Newly registered domains</a></li>
+                            <li class="nav-content"><h3>Utility</h3></li>
+                            <li class="nav-content"><a>Bulk WHOIS Lookup</a></li>
+                            <li class="nav-content"><h3>Databases</h3></li>
+                            <li class="nav-content"><a>Bulk WHOIS Lookup</a></li>
                         </ul>
                     </li>                    
-                    <li id="nav-links"><a href="">Documentation ˅</a>
-                        <ul>
-                            <li><h3>APIs</h3></li>
-                            <li><a href="#">Whois Lookup API</a></li>
-                            <li><a href="#">Whois History API</a></li>
-                            <li><a href="#">Whois API</a></li>
-                            <li><a href="#">Domanin availability API</a></li>
-                            <li><a href="#">Bulk Domanin availability API</a></li>
-                            <li><a href="#">Newly registered domains</a></li>
-                            <li><h3>Utility</h3></li>
-                            <li><a href="#">Bulk WHOIS Lookup</a></li>
-                            <li><h3>Databases</h3></li>
-                            <li><a href="#">Bulk WHOIS Lookup</a></li>
-                            <li><a href="#">Bulk WHOIS Lookup</a></li>
+                   
+                    <li class="nav-links"><button>Documentation ⌄</button>
+                        <ul class="drp-dwn">
+                            <li class="nav-content"><h3>APIs</h3></li>
+                            <li class="nav-content"><a href="#">Whois Lookup API</a></li>
+                            <li class="nav-content"><a href="#">Whois History API</a></li>
+                            <li class="nav-content"><a href="#">Whois API</a></li>
+                            <li class="nav-content"><a href="#">Domanin availability API</a></li>
+                            <li class="nav-content"><a href="#">Bulk Domanin availability API</a></li>
+                            <li class="nav-content"><a href="#">Newly registered domains</a></li>
+                            <li class="nav-content"><h3>Utility</h3></li>
+                            <li class="nav-content"><a href="#">Bulk WHOIS Lookup</a></li>
+                            <li class="nav-content"><h3>Databases</h3></li>
+                            <li class="nav-content"><a href="#">Bulk WHOIS Lookup</a></li>
+                            <li class="nav-content"><a href="#">Bulk WHOIS Lookup</a></li>
                             
                         </ul>
                     </li>                    
-                    <li id="nav-links"><a href="">Demo ˅</a>
-                        <ul>
-                            <li><h3>APIs</h3></li>
-                            <li><a href="#">Whois Lookup API</a></li>
-                            <li><a href="#">Whois History API</a></li>
-                            <li><a href="#">Whois API</a></li>
-                            <li><a href="#">Domanin availability API</a></li>
+                    
+                    <li class="nav-links"><button onclick="">Demo ⌄</button>
+                        <ul class="drp-dwn">
+                            <li class="nav-content"><h3>APIs</h3></li>
+                            <li class="nav-content"><a href="#">Whois Lookup API</a></li>
+                            <li class="nav-content"><a href="#">Whois History API</a></li>
+                            <li class="nav-content"><a href="#">Whois API</a></li>
+                            <li class="nav-content"><a href="#">Domanin availability API</a></li>
 
                         </ul>
                     </li>                    
-                    <li id="nav-links"><a href="pricing.html">Pricing</a> </li>                   
-                    <li id="nav-links"><a href="">Sign Up</a></li>                    
-                    <li id="nav-links"><a href="">Sign In</a></li>                
+                    <li class="nav-links"><a href="pricing.html">Pricing</a> </li>                   
+                    <li class="nav-links"><button>Sign Up</a></li>                    
+                    <li class="nav-links"><button>Sign In</a></li>                
                 </ul>
         </nav>
-    </header>    
+    
+    </div>
+
+</header> 
+
 		<div>
 
+    <div class="duration">
+        
+        <li id="duration">Monthly</li>
+        <label id="switch">
+            <input id="ym" type="checkbox" >
+            <span class="slider round"></span>
+        </label>
+        <li id="duration">yearly</li> 
+        
+    </div>
 
-<div class="duration">
-    
-    <li id="duration">Monthly</li>
-    <label id="switch">
-        <input id="ym" type="checkbox" >
-        <span class="slider round"></span>
-      </label>
-      <li id="duration">yearly</li> 
-      
-</div>
+    <div class="textt">
+        <p id="textt">save <span style="color: firebrick;">big</span> by paying anually <span style="padding-bottom :-2px;"><img  src="/pics/finger-pointing.png"></span></p>
+    </div>
+    <div class="priceContainer">
+        <div class="prow">
+            <div class="rowInner">
+                <div id="card">
 
-<div class="textt">
-    <p id="textt">save <span style="color: firebrick;">big</span> by paying anually <span style="padding-bottom :-2px;"><img  src="/pics/finger-pointing.png"></span></p>
-</div>
-<div class="priceContainer">
-    <div class="prow">
-        <div class="rowInner">
-            <div id="card">
+                </div>
+
                 
             </div>
         </div>
     </div>
 
-<div class="hamburger">
     
-</div>
 
    
 
@@ -139,7 +148,7 @@
 
 
                 <div class="fcol">
-                    <h2>Products</h2>
+                    <h2>Products</h2><br><br>
                     <ul>
                         <li><a href="">Whois Lookup API</a>
                         <li><a href="">Whois History API</a>

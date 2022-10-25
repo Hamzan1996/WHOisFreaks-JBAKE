@@ -1,8 +1,18 @@
-body{
-    margin: 0px;
-    font-family: 'Roboto', sans-serif;
+
+*{
+    font-family: Arial, Helvetica, sans-serif ;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    max-width: 100%;
+    box-sizing: border-box;
     
 }
+body{
+    padding-top: 96px;
+}
+
+
 /* -----------------------NAV BAR STYLING-------------------------------------------*/
 
 .container{
@@ -16,11 +26,6 @@ body{
 .navbar{
     display: flex;
     justify-content: space-between;
-    margin-left: 5%;
-    margin-right: 5%;
-    
-    height: 96px;
-    
 
 }
 
@@ -101,28 +106,40 @@ button.dropbtn:hover{color: rgb(182, 171, 199);}
 
   /* -----------------------mainBox-------------------------------------------*/
 .mainboxwrapper{
-    background-image: url(/pics/AdobeStock_298681782.jpeg) ;
-    background-repeat: no-repeat;
+    overflow: hidden;
+    background-image: url(/pics/Wallpaper.jpg);
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 200px;
 }
-  .mainbox{
-    display: flex;
-    padding: 150px;
-  }
 
-  .main-left{
+
+  .mainbox{
+    position: relative;
+    display: flex;
+    padding: 200px 150px 150px 150px;
+    height: max-content;
+    
+    
+  }  
+ 
+ /* .mainboxwrapper::before{
+    content: "";
+    background: url(/pics/bg1.webp);
+    background-size: cover;
+    position: absolute;
+    top: 0px; right: 0; left: 0; bottom:0;
+    background: rgba(3, 1, 1, 0.6);
+}*/
+  
+.main-left{
     width: 50%;
     padding-right: 85px;
-
-
-  }
+}
 
   .main-right{
     max-height: 468px;
     background: rgba(0, 0, 0, 0.6);
-
     line-height: 1.75;
     padding: 1em 1.5em;
     overflow: auto;
@@ -131,34 +148,21 @@ button.dropbtn:hover{color: rgb(182, 171, 199);}
     width: 50%;
     min-width: 20%;
     border-radius: 10px;
+    padding-left: 0; margin-left: 0;
   }
-  @media screen and (max-width: 1200px) {
-    .main-left, .main-right{
-        width: 90%;
-    }
-    .textbox>p{
-        margin-left: -8%; 
-    }
-    .textbox>a{
-        margin-left: -1%;
-    }
-    div.pictext>p{
-        min-width: 100%;
-        padding: 15px;
-        margin: 0 auto;
-    }
-    
-}
+  pre{
+    padding-left:0;
+    margin-left: -40px;
+  }
 
+ 
 .textbox>p{
     margin-left: -8%; 
 }
 .textbox>a{
     margin-left: -8%;
 }
-.textbox>button{
-    margin-left: -2%;
-}
+
 
 
   h1#main{
@@ -219,43 +223,94 @@ button.dropbtn:hover{color: rgb(182, 171, 199);}
 
 .footerinner{
     padding: 0px 20% 0 20%;
-   
     display: flex;
-    
+    position: relative;
+}
+.counts{
+    position: relative;
 }
 .mainfooter{
     display: flex;
-    background: rgba(199, 31, 31, 0.3);
+    background: transparent;
     min-width: 60%;
-    color: #f2a3a5;
+    color: antiquewhite;
     justify-content: center;
     padding: 0 20% 0 20%;
     min-height: 50px;
     padding-top: 20px;
     padding-bottom: 40px;
+    position: relative;
     
 }
+
+.mainfooter::before{
+    content: "";
+    position: absolute;
+    top: 0px; right: 0; left: 0; bottom:0;
+    background: rgba(135, 6, 6, 0.732);
+    box-sizing: border-box;
+    background-position: 50% 0;
+    height: 100%;
+        
+  }
+
+/*
+
 
 /* -----------------------White and red boxes-------------------------------------------*/
 
-.centered{
+div.centered{
+    display: block;
     text-align: center !important;
-    padding: 90px;
-    padding-left: 350px;
-    padding-right: 350px;
-
+    max-width: 800px!important;
+    margin: 0 auto;
+    padding: 70px 0;
 }
+
 
 .whitebox{
-    background-color: #ffefef;
+    background-color: rgba(250,235,215,255);
     min-height: 800px;
-   
+    width: 100%;
     
 }
-
-h1.red{
+h4{
+    font-size: 1.4em;
+    padding: 0; margin-bottom: 0; border: none;
+    padding-bottom: 24.3px;
+    
+}
+.red-sec{
+    margin: 0; padding: 0;
+    padding: 0 4px 0 2px;
+    margin: 0 0 10px;
+    text-align: justify;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    color: sienna;
+    font-size: 17.4px;
+    box-sizing: border-box;
+    line-height: 2;
+}
+.red{
     color: #d50409;
     font-weight: 700;
+    font-size: 24px;
+    padding-bottom: 24.3px;
+    margin-top: 31.92px;
+    
+}
+  
+
+.redPicCol{
+    color: #d50409;
+    font-weight: 700;
+    font-size: 24px;
+    padding-bottom: 63.3px;
+    
 }
 p.red{
     color: sienna;
@@ -269,11 +324,19 @@ p.red{
     color: #c53a07;
     
 }
-
+.row1{
+    display: block;
+    width: calc(100% - 6em);
+    margin: auto!important;
+}
+.whiteT{
+    color: antiquewhite;
+}
 .row2{
     display: flex;
-    padding-left: 5%;
-    padding-right: 5%;
+    margin-left: 0; padding-left: 0;
+    margin: 0 76px;
+    
     
 }
 .pContainer{
@@ -283,15 +346,19 @@ p.red{
     padding: 0 10px;
     padding: 40px 10px;
     padding-bottom: 60px;
-    
+    width: 50%;
 
 }
 .small{
-    width: 30px;
+    width: 23px;
+    padding: 10px;
+    
     
 }
 .smallpic{
     padding: 28px 20px;
+    margin-right:35px ;
+    margin-left:-30px ;
 }
 .redbox{
     background: #cd2727;
@@ -328,27 +395,46 @@ button#moredetails{
     max-height: 50px;
  }
  .pictext{
-    width: 50%;
+    width: 45%;
     padding: 45px;
     padding-left: 100px;
     min-height: max-content;
+    display: block;
+    position: relative;
     
     
  }
- .bigPic{
-    min-width: 20%;
-    padding: 8%;
-    max-width: 60%;
-
+ .negmar{
+    margin-left: -30px;
  }
+ .negmar40{
+    margin-left: -45px; 
+ }
+ 
 
  .picCol{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    height: 800px;
+    padding: 208px 0 174px 0;
     
  }
+ .bigPictureRight{
+    max-width: 500px;
+    max-height: 340px;
+    padding: 50px;
+    
+ }
+ .bigPictureLeft{
+    max-width: 500px;
+    max-height: 340px;
+    padding: 0; margin: 0;
+    padding: 50px;
+ }
+
+.marginLeft{
+    margin-left: 10%;
+}
 
  .footer{
     background-color: black;
@@ -375,6 +461,9 @@ button#moredetails{
     width: 25%;
 
 }
+.fcol>h2{
+    padding-left: 0;
+}
 .logoo{
     width: 30%;
 }
@@ -396,14 +485,82 @@ h2{
 }
 
 @media screen and (max-width: 1200px) {
+    .main-left, .main-right{
+        width: 90%;
+    }
+    html{
+        max-width: 50%;
+    }
+    .textbox>p{
+        margin-left: -8%; 
+    }
+    .textbox>a{
+        margin-left: -1%;
+    }
+    h4{
+        margin-left: 0;
+        text-align: center;
+    }
+    
+      .fcol>h2{
+        display: block;
+        padding-bottom: 10px;
+      }
+}
+
+
+@media screen and (max-width: 1200px) {
     .footer,.picCol, div.mainbox, .mainfooter , div.main-right , div.main-left , .row2 , .row1 , div.centered  , .redbox , .whitebox{
      padding: 25px 5px;
      display: block;
-     margin: 0 auto !important;
+     margin: auto auto !important;
 
-   }.picCol{
+    }.picCol{
        display: block;
-       min-height: 1100px;
+       max-width: calc(100% - 50px);
+     }
+     .pictext{
+        padding: 25px 5px;
+        display: block;
+        margin: auto auto !important;
+        width: calc(100% - 6em);
+     }
+     .bigPictureLeft{
+        width: 100%;
+        padding: 0;
+        display: block;
+        margin: auto auto;
+     }
+     .textbox>p, .textbox>h4,.textbox>a, .smallpic{
+        padding: 0; margin: auto;
+        text-align: left;
+        padding-bottom: 25px;
+     }
+     .box{
+        width: 90%;
+        text-align: justify;
+        
+     }
+     .negmar, .negmar40{
+        margin-left: 0;
+     }
+     .textbox{
+        padding: 25px;
+     } 
+     .small{
+        transform: translate(0%, -100%);
+        top: 0;
+        position: relative;
+     }
+
+     .bigPictureRight{
+        width: 100%;
+        padding:0;
+        display: block;
+        margin: auto auto;
+     }
+     .redbox, .whitebox{
+        max-height: fit-content;
      }
 
      html{
@@ -412,8 +569,9 @@ h2{
         max-width: 100%;
     }
     .fcol{
-        width: 50%;
+        width: 60%;
         display: block;
+        margin: 0 auto;   
     }
     p.red, p.white{
         padding: 20px 60px;
@@ -445,15 +603,19 @@ h2{
 }
 
 
-toggle-button{
-    position: absolute;
+.toggle-button{
+    position: relative;
     top: 2.75rem;
     right: 1rem;
-    display: none;
     justify-content: space-between;
     flex-direction: column;
     width: 30px;
     height: 21px;
+}
+span.bar{
+    height: 5px;
+    color: black;
+    border: 2px solid black;
 }
 
 
@@ -491,10 +653,7 @@ toggle-button{
     }
     
 }
-div.dropdown-show{
-    background-color: black;
-    display: flexbox;
-}
+
 
 
 .hide{
@@ -530,7 +689,5 @@ div.dropdown-show{
     color: wheat;
     border: 2px solid wheat;
 }
-.countt{
-    display: flex;
-}
+
 

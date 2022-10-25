@@ -87,7 +87,7 @@ fetch('https://billing.ipgeolocation.io/plan').then((data)=>{
             <h3 class="dark">30K requests per month</h3>
         </div>
         <div class="limit">
-            <span style="color: firebrick;">1K Daily Limit</span>
+            <p id="limit">1K Daily Limit</p>
         </div>
         <div class="button1">
             <button id="signUp">sign Up For Free!</button>
@@ -108,7 +108,7 @@ fetch('https://billing.ipgeolocation.io/plan').then((data)=>{
             <h3 class="dark">${nFormatter(values.planApiUsageLimit.requests)} requests per ${values.interval}</h3>
         </div>
         <div class="limit">
-            <span style="color: firebrick;">$${values.planApiUsageLimit.surchargeRate} per extra ${nFormatter(values.planApiUsageLimit.surchargeRequests)} requests </span>
+            <p id="limit">$${values.planApiUsageLimit.surchargeRate} per extra ${nFormatter(values.planApiUsageLimit.surchargeRequests)} requests </p>
         </div>
         <div class="button1">
             <button id="signUp">sign Up For Free!</button>
@@ -132,7 +132,7 @@ fetch('https://billing.ipgeolocation.io/plan').then((data)=>{
             <h3 class="dark">30K requests per month</h3>
         </div>
         <div class="limit">
-            <span style="color: firebrick;">1K Daily Limit</span>
+            <p id="limit">1K Daily Limit</p>
         </div>
         <div class="button1">
             <button id="signUp">sign Up For Free!</button>
@@ -153,7 +153,7 @@ fetch('https://billing.ipgeolocation.io/plan').then((data)=>{
             <h3 class="dark">${nFormatter(values.planApiUsageLimit.requests)} requests per ${values.interval}</h3>
         </div>
         <div class="limit">
-            <span style="color: firebrick;">$${values.planApiUsageLimit.surchargeRate} per extra ${nFormatter(values.planApiUsageLimit.surchargeRequests)} requests </span>
+            <p id="limit">$${values.planApiUsageLimit.surchargeRate} per extra ${nFormatter(values.planApiUsageLimit.surchargeRequests)} requests </p>
         </div>
         <div class="button1">
             <button id="signUp">sign Up For Free!</button>
@@ -162,13 +162,12 @@ fetch('https://billing.ipgeolocation.io/plan').then((data)=>{
     })
 
  
-/*document.getElementById("card").innerHTML=data0+data1;
+document.getElementById("card").innerHTML=data0+data1;
 const yearly=document.getElementById("switch");
 yearly.addEventListener('click', function showYearly(){
     return document.getElementById("card").innerHTML=data2+data3;
 });
 
-*/
 document.getElementById("card").innerHTML=data0+data1;
 
 const togler=document.getElementById("ym");
