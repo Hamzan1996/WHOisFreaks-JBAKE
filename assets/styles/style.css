@@ -486,9 +486,12 @@ h2{
 
 .fcol > ul > li > a:hover{ 
     border-bottom: 1px white solid;
-    
+  
 }
 
+.flag{
+    width: 20px;
+}
 @media screen and (max-width: 1200px) {
     .main-left, .main-right{
         width: 90%;
@@ -580,7 +583,7 @@ h2{
         padding: 20px 60px;
     }
     div.frow{
-        max-width: 80%;
+        max-width: 70%;
         margin: auto;
     }
 
@@ -593,6 +596,9 @@ h2{
         flex-wrap: wrap;
         width: min-content;
 
+    }
+    .frow{
+        display: block;
     }
 }
 
@@ -611,7 +617,8 @@ h2{
 
 @media screen and (max-width: 1000px) {
     div.fcol{
-        min-width: 50%;
+        min-width: 40%;
+        padding-bottom: 20px;
     }
 }
 @media screen and (max-width: 600px) {
