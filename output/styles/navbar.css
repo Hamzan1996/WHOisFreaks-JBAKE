@@ -60,11 +60,14 @@
    
 
  
- header .navbar ul li a:hover{
+ header .navbar ul li a:hover {
    color: rgb(211, 196, 224);
    transition: 0.8s;
  }
- 
+ header .navbar ul li button:hover{
+  color: rgb(211, 196, 224);
+  transition: 0.8s;
+}
  
  .drp-dwn{
    position: absolute;
@@ -163,8 +166,10 @@
        margin-left: 10%;
        margin-top: -14.5%;
        box-shadow: none;
+       
  
-   }  
+   } 
+  
    header .navbar ul li ul li {
      border: none;
      height: 60%;
@@ -190,6 +195,21 @@
    cursor: pointer;
  }
  
+ .arrowRed{
+  content: '';
+  padding: 0;
+  background:rgb(138, 20, 20);
+  border-left: 20px solid transparent;
+  transform: rotate(45deg);
+  display: block;
+  width: 8px;
+  height: 21px;
+  margin-left: 120px;
+  position: relative;
+  top: 20px;
+ }
+
+
 
  
  

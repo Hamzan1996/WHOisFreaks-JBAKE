@@ -10,6 +10,7 @@
 }
 body{
     padding-top: 96px;
+    
 }
 
 
@@ -192,6 +193,7 @@ button.dropbtn:hover{color: rgb(182, 171, 199);}
     font-weight: bold;
     border: solid white 2px ;
     transition: 0.5s;
+    margin-top: 20px;
 
  }
  button#getStarted:hover{
@@ -351,14 +353,17 @@ p.red{
 }
 .small{
     width: 23px;
-    padding: 10px;
+   
     
     
 }
 .smallpic{
     padding: 28px 20px;
     margin-right:35px ;
-    margin-left:-30px ;
+    position: relative;
+    top: 0px;
+    width: 150px;
+    filter: grayscale(50%);
 }
 .redbox{
     background: #cd2727;
@@ -488,9 +493,7 @@ h2{
     .main-left, .main-right{
         width: 90%;
     }
-    html{
-        max-width: 50%;
-    }
+    
     .textbox>p{
         margin-left: -8%; 
     }
@@ -537,8 +540,8 @@ h2{
         padding-bottom: 25px;
      }
      .box{
-        width: 90%;
-        text-align: justify;
+        width: 100%;
+        
         
      }
      .negmar, .negmar40{
@@ -577,17 +580,32 @@ h2{
         padding: 20px 60px;
     }
     div.frow{
-        flex-direction: row;
-        flex-wrap: wrap;
+        max-width: 80%;
+        margin: auto;
     }
 
 } 
+@media screen and (max-width: 700px) {
+    div.frow{max-width: 100%;}}
 @media screen and (max-width: 1200px) {
      .fcol{
         display: flex;
         flex-wrap: wrap;
         width: min-content;
 
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .smallpic{
+        top: -46px;
+        left: 40px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .smallpic{
+        top: -110px;
+        left: 0;
     }
 }
 
@@ -646,11 +664,7 @@ span.bar{
         justify-content: center;
         width: 100%;
     }
-    .frow{
-        width: 100%;
-        margin: auto 0; 
-        display: block;
-    }
+    
     
 }
 
@@ -688,6 +702,19 @@ span.bar{
     background: transparent;
     color: wheat;
     border: 2px solid wheat;
+}
+
+.fcol h2{
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.4;
+    padding: 0 0 20px;
+    color: #e5e5e5;
+}
+.fcol a{
+    font-size: 14px;
+    line-height: 36px;
+    color: #e5e5e5;
 }
 
 
