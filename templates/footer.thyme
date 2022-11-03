@@ -21,14 +21,13 @@
                     <h2>Products</h2>
 
                     <ul>
-                        <li><a href="">Whois Lookup API</a>
-                        <li><a href="">Whois History API</a>
-                        <li><a href="">Reverse Whois API</a>
+                        <li><a href="">Whois API</a>
                         <li><a href="">Domain Availability API</a>
-                        <li><a href="">Bulk Whois Lookup</a>
+                        <li><a href="">Bulk Whois API</a>
                         <li><a href="">Newly Registered Domains</a>
                         <li><a href="">Expiring & Dropped Domains</a>
                         <li><a href="">WHOIS Domains Database</a>
+                        
                     </ul>
                 </div>
 
@@ -42,10 +41,6 @@
                         <li><a href="">Reverse Whois API</a>
                         <li><a href="">Domain Availability API</a>
                         <li><a href="">Bulk Domain Availability API</a>
-                        <li><a href="">Bulk Whois Lookup</a>
-                        <li><a href="">Newly Registered Domains</a>
-                        <li><a href="">Expiring Domains</a>
-                        <li><a href="">Dropped/Deleted Domains</a>
                         <li><a href="">Whois Database Subscription</a>
                         <li><a href="">Whois Database Subscription</a>
                     </ul>

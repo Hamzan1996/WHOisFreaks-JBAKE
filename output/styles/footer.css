@@ -3,9 +3,8 @@
     padding: 70px 0;
  }
  .footercontainer{
-    max-width: 85%;
-
-    margin: auto;
+   margin: auto;
+   max-width: 80em;
 
  }
 
@@ -41,4 +40,7 @@ h2{
 .fcol > ul > li > a:hover{ 
     border-bottom: 1px white solid;
     
+}
+.fcol{
+    min-height: 300px;
 }

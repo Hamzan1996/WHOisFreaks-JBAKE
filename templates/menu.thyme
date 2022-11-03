@@ -18,16 +18,14 @@
                         <ul class="drp-dwn" id="productss">
                             <div class="arrowRed"></div>
                             <li class="nav-content"><h3>APIs</h3> </li>
-                            <li class="nav-content"><a>Whois Lookup API</a></li>                           
-                            <li class="nav-content"><a>Whois History API</a></li>
-                            <li class="nav-content"><a>Whois API</a></li>
+                            <li class="nav-content"><a>Whois API</a></li>                           
                             <li class="nav-content"><a>Domanin availability API</a></li>
-                            <li class="nav-content"><a>Bulk Domanin availability API</a></li>
                             <li class="nav-content"><a>Newly registered domains</a></li>
+                            <li class="nav-content"><a>Expiring & Dropped Domains</a></li>
                             <li class="nav-content"><h3>Utility</h3></li>
                             <li class="nav-content"><a>Bulk WHOIS Lookup</a></li>
                             <li class="nav-content"><h3>Databases</h3></li>
-                            <li class="nav-content"><a>Bulk WHOIS Lookup</a></li>
+                            <li class="nav-content"><a>WHOIS Domain Database</a></li>
                         </ul>
                     </li>                    
                    
@@ -35,17 +33,14 @@
                         <ul class="drp-dwn">
                             <div class="arrowRed"></div>
                             <li class="nav-content"><h3>APIs</h3></li>
-                            <li class="nav-content"><a href="#">Whois Lookup API</a></li>
-                            <li class="nav-content"><a href="#">Whois History API</a></li>
                             <li class="nav-content"><a href="#">Whois API</a></li>
-                            <li class="nav-content"><a href="#">Domanin availability API</a></li>
-                            <li class="nav-content"><a href="#">Bulk Domanin availability API</a></li>
-                            <li class="nav-content"><a href="#">Newly registered domains</a></li>
-                            <li class="nav-content"><h3>Utility</h3></li>
-                            <li class="nav-content"><a href="#">Bulk WHOIS Lookup</a></li>
+                            <li class="nav-content"><a href="#">Domain Availability API</a></li>
+                            <li class="nav-content"><a href="#">Newly Registered Domains</a></li>
+                            <li class="nav-content"><a href="#">Expiring Domains</a></li>
+                            <li class="nav-content"><a href="#">Deleted Domains</a></li>
                             <li class="nav-content"><h3>Databases</h3></li>
-                            <li class="nav-content"><a href="#">Bulk WHOIS Lookup</a></li>
-                            <li class="nav-content"><a href="#">Bulk WHOIS Lookup</a></li>
+                            <li class="nav-content"><a href="#">WHOIS Database Subscription</a></li>
+                            <li class="nav-content"><a href="#">WHOIS Database Download</a></li>
                             
                         </ul>
                     </li>                    
@@ -56,7 +51,7 @@
                             <li class="nav-content"><h3>APIs</h3></li>
                             <li class="nav-content"><a href="#">Whois Lookup API</a></li>
                             <li class="nav-content"><a href="#">Whois History API</a></li>
-                            <li class="nav-content"><a href="#">Whois API</a></li>
+                            <li class="nav-content"><a href="#">Reverse Whois API</a></li>
                             <li class="nav-content"><a href="#">Domanin availability API</a></li>
 
                         </ul>

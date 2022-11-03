@@ -12,6 +12,9 @@ body{
     padding-top: 96px;
     
 }
+img{
+    vertical-align: middle;
+}
 
 
 /* -----------------------NAV BAR STYLING-------------------------------------------*/
@@ -115,6 +118,7 @@ button.dropbtn:hover{color: rgb(182, 171, 199);}
 }
 
 
+
   .mainbox{
     position: relative;
     display: flex;
@@ -124,14 +128,7 @@ button.dropbtn:hover{color: rgb(182, 171, 199);}
     
   }  
  
- /* .mainboxwrapper::before{
-    content: "";
-    background: url(/pics/bg1.webp);
-    background-size: cover;
-    position: absolute;
-    top: 0px; right: 0; left: 0; bottom:0;
-    background: rgba(3, 1, 1, 0.6);
-}*/
+
   
 .main-left{
     width: 50%;
@@ -156,16 +153,6 @@ button.dropbtn:hover{color: rgb(182, 171, 199);}
     padding-left:0;
     margin: 0 0 0 0;
   }
-
- 
-.textbox>p{
-    margin-left: -8%; 
-}
-.textbox>a{
-    margin-left: -8%;
-}
-
-
 
   h1#main{
     font-size: 35px;
@@ -203,7 +190,7 @@ button.dropbtn:hover{color: rgb(182, 171, 199);}
 
   .mainfooter>div>span {
     display: block;
-    color: bisque;
+    color: rgba(255, 255, 255, 0.651);
     font-size: 28px;
     font-weight: 600;
     line-height: 1.22;
@@ -216,7 +203,7 @@ button.dropbtn:hover{color: rgb(182, 171, 199);}
 .mainfooter>div {
     width: 5%;
     display: inline-block;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.651);
     font-size: 15px;
     line-height: 1.63;
     text-align: center;
@@ -232,6 +219,7 @@ button.dropbtn:hover{color: rgb(182, 171, 199);}
 .counts{
     position: relative;
 }
+
 .mainfooter{
     display: flex;
     background: transparent;
@@ -241,7 +229,7 @@ button.dropbtn:hover{color: rgb(182, 171, 199);}
     padding: 0 20% 0 20%;
     min-height: 50px;
     padding-top: 20px;
-    padding-bottom: 40px;
+    padding-bottom: 1.5em;
     position: relative;
     
 }
@@ -250,11 +238,10 @@ button.dropbtn:hover{color: rgb(182, 171, 199);}
     content: "";
     position: absolute;
     top: 0px; right: 0; left: 0; bottom:0;
-    background: rgba(135, 6, 6, 0.732);
+    background: rgba(135, 6, 6, 0.61);
     box-sizing: border-box;
     background-position: 50% 0;
-    height: 100%;
-        
+    height: 100%;   
   }
 
 /*
@@ -301,7 +288,7 @@ h4{
 .red{
     color: #d50409;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 1.4em;
     padding-bottom: 24.3px;
     margin-top: 31.92px;
     
@@ -327,6 +314,7 @@ p.red{
     color: #c53a07;
     
 }
+
 .row1{
     display: block;
     width: calc(100% - 6em);
@@ -338,32 +326,37 @@ p.red{
 .row2{
     display: flex;
     margin-left: 0; padding-left: 0;
-    margin: 0 76px;
-    
-    
+    margin: auto!important;
+    max-width: 80%;
 }
+
 .pContainer{
     display: flex;
+    justify-content: space-around;
 }
 .box{
-    padding: 0 10px;
-    padding: 40px 10px;
+    padding: 40px 0px;
     padding-bottom: 60px;
-    width: 50%;
-
+    width: 30%;
+    margin: auto!important;
+    display: flex;
+    
+}
+.textbox{
+    min-width: 350px;
+    margin: 0;
+    padding: 0;
 }
 .small{
+    
+    border-bottom: 0;
+    position: relative;
     width: 23px;
-   
-    
-    
+    filter: grayscale(50%);  
 }
 .smallpic{
-    padding: 28px 20px;
-    margin-right:35px ;
-    position: relative;
-    top: 0px;
-    width: 150px;
+    padding: 2em 1em;
+    width: 80vh;
     filter: grayscale(50%);
 }
 .redbox{
@@ -406,17 +399,33 @@ button#moredetails{
     padding-left: 100px;
     min-height: max-content;
     display: block;
-    position: relative;
+    position: relative;}
     
     
- }
+/* }
  .negmar{
     margin-left: -30px;
  }
  .negmar40{
     margin-left: -45px; 
- }
+ }*/
  
+ h5{
+    padding: 0;
+    text-align: left;
+    margin: 0;
+ }
+ .icon{
+    position: relative;
+    top: 2em;
+    right: .8em;
+    width: 23px;
+    filter: grayscale(50%);
+    height: 24px;
+ }
+ .width45{
+    width:45%;
+ }
 
  .picCol{
     display: flex;
@@ -447,8 +456,7 @@ button#moredetails{
     padding: 70px 0;
  }
  .footercontainer{
-    max-width: 85%;
-
+   width: 90%;
     margin: auto;
 
  }
@@ -494,8 +502,8 @@ h2{
     width: 20px;
 }
 @media screen and (max-width: 1200px) {
-    .main-left, .main-right{
-        width: 90%;
+    .bigPicture{
+        padding: 10% 0;
     }
     
     .textbox>p{
@@ -506,7 +514,7 @@ h2{
     }
     h4{
         margin-left: 0;
-        text-align: center;
+        
     }
     
       .fcol>h2{
@@ -514,29 +522,51 @@ h2{
         padding-bottom: 10px;
       }
 }
+@media screen and (max-width: 1350px) {
+    .row2{
+        max-width: 100%;
+        padding: 0 2rem;
+    }}
 
 
 @media screen and (max-width: 1200px) {
-    .footer,.picCol, div.mainbox, .mainfooter , div.main-right , div.main-left , .row2 , .row1 , div.centered  , .redbox , .whitebox{
+    .footer,.picCol, div.mainbox, .mainfooter , div.main-right , div.main-left  , .row1 , div.centered  , .redbox , .whitebox{
      padding: 25px 5px;
      display: block;
      margin: auto auto !important;
 
-    }.picCol{
+    }
+    div.main-left,div.main-right{
+        width: 90%;
+    }
+    .mainboxwrapper{
+    padding: 15% 0 0 0;
+    }
+    
+    .row2{
+        width: 95%;
+        margin: auto !important;
+        display: block;
+    }
+    .icon{
+        right: 0;
+    }
+    .picCol{
        display: block;
        max-width: calc(100% - 50px);
      }
+    
      .pictext{
         padding: 25px 5px;
         display: block;
         margin: auto auto !important;
         width: calc(100% - 6em);
      }
-     .bigPictureLeft{
+     .bigPictureLeft,.bigPictureRight{
         width: 100%;
-        padding: 0;
         display: block;
-        margin: auto auto;
+        height: 100%;
+     
      }
      .textbox>p, .textbox>h4,.textbox>a, .smallpic{
         padding: 0; margin: auto;
@@ -555,17 +585,14 @@ h2{
         padding: 25px;
      } 
      .small{
-        transform: translate(0%, -100%);
-        top: 0;
+        
+        border-bottom: 0;
         position: relative;
+        width: 23px;
+        filter: grayscale(50%);
      }
 
-     .bigPictureRight{
-        width: 100%;
-        padding:0;
-        display: block;
-        margin: auto auto;
-     }
+    
      .redbox, .whitebox{
         max-height: fit-content;
      }
@@ -573,19 +600,20 @@ h2{
      html{
         zoom: 80%;}
     .footercontainer{
-        max-width: 100%;
+        max-width: 72em;
     }
     .fcol{
-        width: 60%;
+        width: 70%;
         display: block;
-        margin: 0 auto;   
+        margin: 0 auto; 
+         
     }
     p.red, p.white{
         padding: 20px 60px;
     }
     div.frow{
-        max-width: 70%;
         margin: auto;
+        
     }
 
 } 
@@ -596,11 +624,14 @@ h2{
         display: flex;
         flex-wrap: wrap;
         width: min-content;
+        flex-direction: column;
 
     }
-    .frow{
-        display: block;
+    .fcol ul{
+        position: relative;
+        top: 0px;
     }
+
 }
 
 @media screen and (max-width: 1100px) {
@@ -619,7 +650,7 @@ h2{
 @media screen and (max-width: 1000px) {
     div.fcol{
         min-width: 40%;
-        padding-bottom: 20px;
+        min-height: max-content;
     }
 }
 @media screen and (max-width: 600px) {
