@@ -83,7 +83,7 @@
    min-width: 260px;
    right: -62px;
  }
- header .navbar ul li:hover > ul{
+ header .navbar ul li:hover > .drp-dwn{
    display: initial;
  }
  header .navbar ul li ul li h3{
@@ -98,6 +98,9 @@
    
  }
  
+ .showclass{
+  display: initial;
+ }
  
  
  .hamburger{
@@ -112,6 +115,12 @@
    cursor: pointer;
    display: none;
    
+ }
+ #Products{
+  
+  background-color:wheat ;
+  size: 25px;
+  color: white;
  }
  
  @media(max-width:1300px){
@@ -135,7 +144,9 @@
      background-color: transparent;
      margin: auto;
    }
-
+   #Products{
+    display: block;
+   }
    
 
    header .navbar ul{
@@ -194,6 +205,9 @@
    #menu-bar:checked ~ .navbar{
        display: initial;
    }
+   header .navbar ul li:hover > .drp-dwn{
+    display: initial;
+  }
  }
 
 

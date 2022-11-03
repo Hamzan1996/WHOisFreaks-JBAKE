@@ -99,7 +99,7 @@ fetch('https://billing.ipgeolocation.io/plan').then((data)=>{
         <div class="head">
            <div>
                 <h1 class="boxheading">${values.name}</h1>
-                <h3 class="price">$${values.rate}</h3>
+                <h3 class="price">$${values.rate} </h3>
                 <p class="usage">Per ${values.interval}*</p>
                 <div class="innerbox"></div>
             </div> 
@@ -117,7 +117,7 @@ fetch('https://billing.ipgeolocation.io/plan').then((data)=>{
     })
 
     dataobj.slice(9, 17).map((values) =>{
-       
+    discount=(Math.round(values.rate*(120/100)))  
     
         data2=`<div class="priceBox">
         <div class="head">
@@ -144,7 +144,7 @@ fetch('https://billing.ipgeolocation.io/plan').then((data)=>{
         <div class="head">
            <div>
                 <h1 class="boxheading">${values.name}</h1>
-                <h3 class="price">$${values.rate}</h3>
+                <h3 class="price">$${values.rate} <span class="discount"><del>$${discount}</del></span></h3>
                 <p class="usage">Per ${values.interval}*</p>
                 <div class="innerbox"></div>
             </div> 
@@ -187,12 +187,14 @@ togler.addEventListener('change', ()=> {
     console.log(error);
 });
 
-    let dpp = document.querySelector('toggle-button');
-    let showmenu = document.querySelector('.dropdown');
-    dpp.addEventListener('click', ()=> {
-        showmenu.diplay='block'
-    })
-    
-function onClickMenu(){
-    document.getElementById('nav').classList.toggle(".dropdown-show");
-}
+
+    drp=document.getElementsByClassName("drp-dwn");
+    drp.forEach(function(a) {
+        a.onclick = function() {
+            var b = a.querySelector(".drp-dwn");
+            b.classList.contains("visible") ? b.classList.remove("visible") : (document.querySelectorAll(".drp-dwn").forEach(function(c) {
+                c.classList.remove("visible")
+            }),
+            b.classList.toggle("visible"))
+        }
+    });

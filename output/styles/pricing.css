@@ -22,7 +22,7 @@ div.rowInner{
 
 @media screen and (max-width: 1400px) {
     .priceBox{
-        margin: 20px;
+        margin: 1em;
         flex-wrap: wrap;
      }
      .prow{
@@ -137,6 +137,7 @@ span{
    font-size: 15px;
    position: relative;
    top: 55px;
+   width: 100%;
 }
 .button1{
     padding: 15px 60px;
@@ -244,6 +245,15 @@ label#switch {
     color: gray;
     
   }
+  .discount{
+    color: rgb(255, 208, 0);
+    position: relative;
+    bottom: 1.2em;
+    font-size: 1em;
+    left: .5em;
+  }
+
+
   #ym{display: none;}
 
   ----------------------------------------------
