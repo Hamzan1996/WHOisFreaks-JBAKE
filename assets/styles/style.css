@@ -15,6 +15,12 @@ body{
 img{
     vertical-align: middle;
 }
+p{
+    font-weight: 400;
+}
+h4{
+    font-weight: 500;
+}
 
 
 /* -----------------------NAV BAR STYLING-------------------------------------------*/
@@ -132,14 +138,14 @@ button.dropbtn:hover{color: rgb(182, 171, 199);}
   
 .main-left{
     width: 50%;
-    padding-right: 85px;
+    padding-right: 10em;
+    padding-top: 8%;
 }
 
   .main-right{
     
     background: rgba(0, 0, 0, 0.6);
     line-height: 1.75;
-    padding: 1em 1.5em;
     overflow: auto;
     font-size: 12px;
     color: #fff;
@@ -148,14 +154,18 @@ button.dropbtn:hover{color: rgb(182, 171, 199);}
     border-radius: 10px;
     padding-left: 0; margin-left: 0;
     font-size: 0.9em;
+    max-height:41em;
   }
   pre{
     padding-left:0;
     margin: 0 0 0 0;
+    padding-left: 2em;
+    padding-top: 0.2em;
+    
   }
 
   h1#main{
-    font-size: 35px;
+    font-size: 1.8em;
     margin: 0 0 1em 0;
     padding: 0;
     letter-spacing: 3px;
@@ -168,7 +178,7 @@ button.dropbtn:hover{color: rgb(182, 171, 199);}
     max-width: 880px;
     text-align: justify;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1.2em;
     line-height: 1.6em;
   }
 
@@ -289,7 +299,7 @@ h4{
     color: #d50409;
     font-weight: 700;
     font-size: 1.4em;
-    padding-bottom: 24.3px;
+    padding-bottom: .5em;
     margin-top: 31.92px;
     
 }
@@ -328,6 +338,7 @@ p.red{
     margin-left: 0; padding-left: 0;
     margin: auto!important;
     max-width: 80%;
+    width: calc(100%-8em);
 }
 
 .pContainer{
@@ -346,6 +357,10 @@ p.red{
     min-width: 350px;
     margin: 0;
     padding: 0;
+}
+.textbox a:hover{
+    border-bottom: 1px solid;
+    transition: 0.4s;
 }
 .small{
     
@@ -396,20 +411,12 @@ button#moredetails{
  .pictext{
     width: 45%;
     padding: 45px;
-    padding-left: 100px;
     min-height: max-content;
     display: block;
     position: relative;}
     
     
-/* }
- .negmar{
-    margin-left: -30px;
- }
- .negmar40{
-    margin-left: -45px; 
- }*/
- 
+
  h5{
     padding: 0;
     text-align: left;
@@ -432,19 +439,21 @@ button#moredetails{
     justify-content: space-around;
     align-items: center;
     padding: 208px 0 174px 0;
+    width: calc(100% - 6em);
+    margin: auto;
     
  }
  .bigPictureRight{
     max-width: 500px;
     max-height: 340px;
-    padding: 50px;
+    
     
  }
  .bigPictureLeft{
     max-width: 500px;
     max-height: 340px;
     padding: 0; margin: 0;
-    padding: 50px;
+   
  }
 
 .marginLeft{
@@ -517,6 +526,12 @@ h2{
         
     }
     
+    pre{
+        padding: 0; margin: 0;
+        margin-left: -2em;
+        margin-top: -1.5em;
+    }
+    
       .fcol>h2{
         display: block;
         padding-bottom: 10px;
@@ -525,7 +540,7 @@ h2{
 @media screen and (max-width: 1350px) {
     .row2{
         max-width: 100%;
-        padding: 0 2rem;
+        padding: 2em 1rem;
     }}
 
 

@@ -78,7 +78,7 @@
    min-width: 275px;
    background-color: firebrick;
    display:none;
-   box-shadow:  1px 1px 1px rgb(145, 33, 33);
+   box-shadow:  0 15px 16px 0 rgb(0 0 0 / 20%);
    top: 62px;
    min-width: 260px;
    right: -62px;
@@ -92,7 +92,7 @@
    width: 230px;
    font-size: 14px;
    color: antiquewhite;
-   padding: 5px ;
+   padding: 10px 5px ;
    margin: 10px 7%;
   
    
@@ -114,7 +114,8 @@
  header label{
    cursor: pointer;
    display: none;
-   
+   width: 2em;
+   height: 1em;
  }
  #Products{
   
@@ -126,6 +127,12 @@
  @media(max-width:1300px){
    header label{
        display: initial;
+      
+   }
+   header label img{
+  
+    width: 32px;
+
    }
    #logo{
        margin-left: 0%;
@@ -182,7 +189,7 @@
        color: antiquewhite;
        z-index: 100;
        margin-left: 10%;
-       margin-top: -14.5%;
+       margin-top: -6.5%;
        box-shadow: none;
        
  

@@ -11,10 +11,8 @@
     <meta name="description" th:content="${content.description}"/>
 
     <meta name="keywords" th:content="${content.keywords}" />
-    <meta name="theme-color" content="#008080">
-    <meta name="generator" content="CurrencyFreaks.com"/>
-    <meta name="application-name" content="CurrencyFreaks.com" />
 
+    
     <link th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')" th:href="${rootpath}+'styles/style.css?v=2.6'" rel="stylesheet" />
     <link th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')" th:href="${rootpath}+'styles/pricing.css?v=2.6'" rel="stylesheet" />
     <link th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')" th:href="${rootpath}+'styles/navbar.css?v=2.6'" rel="stylesheet" />

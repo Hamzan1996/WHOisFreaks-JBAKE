@@ -24,11 +24,12 @@ function nFormatter(num) {
 function showAPI(){
 
     let result=[];
+    
 
     let baseLink ='https://api.whoisfreaks.com/v1.0/whois?apiKey=6a1ce88d99304a8a9cc2c89ff0283643&whois=live&domainName=';
     let postLink ='&format=JSON';
-    let userinput=document.getElementById('popup').value
-    let completeLink = baseLink + userinput + postLink;
+    let userinput=document.getElementById('popup').value;
+    let completeLink = baseLink + userinput ;
 
     console.log(completeLink)
     
@@ -40,15 +41,17 @@ fetch(completeLink).then((data)=>{
 }).then((textdata)=>{
     console.log('data after json');
     console.log(textdata);
+    let data12=JSON.stringify(textdata,null,4)
     
-    for (var i in textdata){
-        result.push([i , textdata[i]]);
-    }
+    //    for(var i in textdata){
+    //        result.push([i , textdata[i]]);
+    //    }
     
+        
    
 
     var myDiv = document.getElementById("inertext");
-    myDiv.innerHTML = result;
+    myDiv.innerHTML = data12;
     
     }).catch((err)=>{
         console.log(err);
@@ -62,7 +65,6 @@ fetch('https://billing.ipgeolocation.io/plan').then((data)=>{
 
 }).then((dataobj)=>{
     console.log(dataobj);
-    let rateval=[];
     let data1="";
     let data0="";
     let data2="";
