@@ -5,7 +5,7 @@
    position: fixed;
    top: 0; left: 0; right: 0;
    background-color: firebrick;
-   padding: 0px 9%;
+   padding: 0px 8% 0 9.5%;
    align-items: center;
    justify-content: space-between;
    z-index: 1000;
@@ -84,7 +84,7 @@
    right: -62px;
  }
  header .navbar ul li:hover > .drp-dwn{
-   display: initial;
+   display: block;
  }
  header .navbar ul li ul li h3{
    background-color: #8B0000;
@@ -98,15 +98,7 @@
    
  }
  
- .showclass{
-  display: initial;
- }
  
- 
- .hamburger{
-   width: 20px;
-   height: 10px;
- }
  #menu-bar{
    display: none;
  
@@ -114,8 +106,8 @@
  header label{
    cursor: pointer;
    display: none;
-   width: 2em;
-   height: 1em;
+   width: 3em;
+   
  }
  #Products{
   
@@ -131,7 +123,7 @@
    }
    header label img{
   
-    width: 32px;
+    width: 40px;
 
    }
    #logo{
@@ -140,7 +132,7 @@
    header .navbar{
        position: absolute;
        top: 100%; left: 0; right: 0;
-       background-color: black;
+       background-color: rgb(65, 47, 47);
        width: 70%;
        margin: 0 auto;
        z-index: 100;
@@ -153,6 +145,9 @@
    }
    #Products{
     display: block;
+   }
+   header{
+    padding: 0%;
    }
    
 
@@ -177,8 +172,8 @@
        text-align: center;
        height: 50px;
        margin: auto 0;
-       background-color: black;
-       border: 1px solid white;
+       background-color: rgb(44, 39, 39);
+       border-bottom: 1px solid white;
     
    }
 
@@ -189,7 +184,7 @@
        color: antiquewhite;
        z-index: 100;
        margin-left: 10%;
-       margin-top: -6.5%;
+       margin-top: -9.85%;
        box-shadow: none;
        
  
@@ -212,9 +207,13 @@
    #menu-bar:checked ~ .navbar{
        display: initial;
    }
-   header .navbar ul li:hover > .drp-dwn{
-    display: initial;
+   header .navbar ul li:hover > .drp-dwn {
+    opacity: 0;
   }
+  .drp-dwn{
+    display: none;
+  }
+
  }
 
 
@@ -236,6 +235,64 @@
   position: relative;
   top: 20px;
  }
+
+ .menu-button{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5em;
+  height: 4.5em;
+  cursor: pointer;
+  transition:all .5s ease-in-out ;
+ 
+ }
+
+ .menu-button-burger{
+  width: 2.2em;
+  height: 3.5px;
+  background-color: wheat;
+  transition:all .5s ease-in-out ;
+  
+ }
+
+ .menu-button-burger::before,
+ .menu-button-burger::after{
+  content: '';
+  position: absolute;
+  width: 2.2em;
+  height: 3.5px;
+  background-color: wheat;
+  transition:all .5s ease-in-out ;
+  
+ }
+
+ .menu-button-burger::before{
+  transform: translateY(-9px);
+  
+ }
+
+ .menu-button-burger::after{
+  transform: translateY(9px);
+  
+ }
+ .menu-button.open .menu-button-burger{
+  background-color: transparent;
+  }
+  .menu-button.open .menu-button-burger::before{
+    transform: rotate(45deg);
+  }
+  .menu-button.open .menu-button-burger::after{
+    transform: rotate(-45deg) ;
+  }
+
+  .show{
+    opacity:1 !important ;
+  }
+  .noshow{
+    visibility: hidden;
+    display: none;
+  }
 
 
 

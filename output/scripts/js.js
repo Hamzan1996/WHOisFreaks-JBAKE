@@ -42,13 +42,6 @@ fetch(completeLink).then((data)=>{
     console.log('data after json');
     console.log(textdata);
     let data12=JSON.stringify(textdata,null,4)
-    
-    //    for(var i in textdata){
-    //        result.push([i , textdata[i]]);
-    //    }
-    
-        
-   
 
     var myDiv = document.getElementById("inertext");
     myDiv.innerHTML = data12;
@@ -189,14 +182,48 @@ togler.addEventListener('change', ()=> {
     console.log(error);
 });
 
+fetch("https://billing.whoisfreaks.com/db_type/getdomain-whois-table-stat").then((pricingdata)=>{
+    return pricingdata.json();
 
-    drp=document.getElementsByClassName("drp-dwn");
-    drp.forEach(function(a) {
-        a.onclick = function() {
-            var b = a.querySelector(".drp-dwn");
-            b.classList.contains("visible") ? b.classList.remove("visible") : (document.querySelectorAll(".drp-dwn").forEach(function(c) {
-                c.classList.remove("visible")
-            }),
-            b.classList.toggle("visible"))
-        }
+    }).then((billings)=>{
+
+        let countData="";
+    
+    countData=`<div class="counts"><span class="nums" data-val=1986>0</span>Historical Data Since</div>
+            <div class="counts"><span class="nums" data-val=1387>0</span>TLDs</div>
+            <div class="counts"><span class="nums" data-val="${billings[0].totalDomains_no}"{'M+'}>0</span>Domains Tracked</div>
+            <div class="counts"><span class="nums" data-val=${billings[0].totalWhoisNo}<p>M+</p>>0</span>WHOIS Records</div>`
+
+            
+            document.getElementById('counter').innerHTML=countData;
+        
+        //console.log(billings[0].totalDomains_no);
+
+        let valueDisplays =document.querySelectorAll('.nums');
+        let interval = 1000;
+        valueDisplays.forEach((valueDisplays) =>{
+            let startValue=0;
+            let endValue = parseInt(valueDisplays.getAttribute("data-val"));
+            //console.log('func running');
+            //console.log(endValue);
+            let duration = Math.floor(interval/endValue);
+            let counter = setInterval(function(){
+                startValue +=1;
+                valueDisplays.textContent=startValue;
+                if(startValue== endValue){
+                    clearInterval(counter);
+                }
+            },duration,);
+        })
+
+    }).catch((err)=>{
+        console.log(err);
     });
+
+    
+
+
+    
+
+
+        

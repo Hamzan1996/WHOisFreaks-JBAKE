@@ -1,25 +1,19 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="mainHead">
-<meta http-equiv="cache-control" />
-    <title th:with="title=(${content.title != null} ? ${content.title} : 'Currency Site')" th:text="${title}"></title>
 
-<!-- Primary Meta Tags -->
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="title" th:content="${content.title}">
+<head th:fragment="mainHead">
+    <title th:text="${content.title}"></title>
     <meta name="description" th:content="${content.description}"/>
 
-    <meta name="keywords" th:content="${content.keywords}" />
+    <!-- Primary Meta Tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     
+    <link href="styles/style.css" rel="stylesheet" />
+    <link href="styles/pricing.css" rel="stylesheet" />
+    <link href="styles/navbar.css" rel="stylesheet" />
+    <link href="styles/footer.css" rel="stylesheet" />
 
-    
-    <link th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')" th:href="${rootpath}+'styles/style.css?v=2.6'" rel="stylesheet" />
-    <link th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')" th:href="${rootpath}+'styles/pricing.css?v=2.6'" rel="stylesheet" />
-    <link th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')" th:href="${rootpath}+'styles/navbar.css?v=2.6'" rel="stylesheet" />
-    <link th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')" th:href="${rootpath}+'styles/footer.css?v=2.6'" rel="stylesheet" />
-    
-    
-    <link rel="canonical" th:href="${content.canonical}" />
     <script src="scripts/js.js" ></script>
     <script src="scripts/liveDataCounter.js" ></script>
     <script src="scripts/loadTotalTLDs.js" ></script>

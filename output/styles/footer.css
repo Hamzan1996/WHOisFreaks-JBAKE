@@ -44,3 +44,14 @@ h2{
 .fcol{
     min-height: 300px;
 }
+@media screen and (max-width: 1000px) {
+    div.fcol{
+        min-width: 40%;
+        min-height: max-content;
+    }
+}
+@media screen and (max-width: 600px) {
+    div.frow{
+        display: block;
+    }
+}

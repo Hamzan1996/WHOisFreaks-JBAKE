@@ -22,107 +22,18 @@ h4{
     font-weight: 500;
 }
 
-
-/* -----------------------NAV BAR STYLING-------------------------------------------*/
-
-.container{
-    background-color: firebrick; 
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-}
-
-
-.navbar{
-    display: flex;
-    justify-content: space-between;
-
-}
-
-
-button.dropbtn{
-    color: white;
-    font-weight: bold;
-}
-.logoimg{
-    padding: 10px 0px 2px 100px;
-    
-}
-h1{
-    font-weight: bold;
-}
-
-.logoimg a img {
-    width: 108px;
-    width: 90.4px;
-    vertical-align: middle;
-}
-
-
-
-/* DropDown styling  */
-
-.dropdown{
-    padding-right: 15px;
-    padding-top: 15px;
-    transition: 0.3s;
-    position: relative;
-    display: inline-block;
-}
-
-.dropbtn {
-    background-color: transparent;
-    color: rgb(44, 37, 37);
-    padding: 16px;
-    font-size: 17px;
-    border: none;
-    transition: 0.3s;
-
-  }
-
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color:  firebrick;
-    min-width: 300px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-
-  .drp{
-    background-color:rgb(122, 4, 4) ;
-    color: #f0dcdd;
-    text-align: center;
-    padding: 15px;
-    margin: 5%;
-  }
-  .dropdown-content a {
-    color:white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-size: 18px;
-    transition: 0.4s;
-  }
-
-.dropdown-content a:hover {color: rgb(170, 145, 170);}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-button.dropbtn:hover{color: rgb(182, 171, 199);}
-
-
-
   /* -----------------------mainBox-------------------------------------------*/
 .mainboxwrapper{
     overflow: hidden;
-    background-image: url(/pics/Wallpaper.jpg);
-    background-position: center;
+
+}
+.background{
+    background: rgba(0, 0, 0, 0.6) url(/pics/bg1.webp);
+    background-position: center left;
     background-repeat: no-repeat;
     background-size: cover;
+    background-blend-mode: darken;
 }
-
 
 
   .mainbox{
@@ -130,7 +41,7 @@ button.dropbtn:hover{color: rgb(182, 171, 199);}
     display: flex;
     padding: 200px 150px 150px 150px;
     height: max-content;
-    
+    justify-content: space-between;
     
   }  
  
@@ -164,7 +75,7 @@ button.dropbtn:hover{color: rgb(182, 171, 199);}
     
   }
 
-  h1#main{
+  h1#mainHeading{
     font-size: 1.8em;
     margin: 0 0 1em 0;
     padding: 0;
@@ -173,7 +84,7 @@ button.dropbtn:hover{color: rgb(182, 171, 199);}
     color: #fff;
   }
 
-  p#main{
+  p#mainPara{
     color: #fff;
     max-width: 880px;
     text-align: justify;
@@ -264,7 +175,7 @@ div.centered{
     text-align: center !important;
     max-width: 800px!important;
     margin: 0 auto;
-    padding: 70px 0;
+    padding: 10px 0;
 }
 
 
@@ -272,6 +183,7 @@ div.centered{
     background-color: rgba(250,235,215,255);
     min-height: 800px;
     width: 100%;
+    padding: 4em 0em 5em 0em
     
 }
 h4{
@@ -510,7 +422,17 @@ h2{
 .flag{
     width: 20px;
 }
+
+
+
+
 @media screen and (max-width: 1200px) {
+    .footer,.picCol, div.mainbox, .mainfooter , div.main-right , div.main-left  , .row1 , div.centered  , .redbox , .whitebox{
+     padding: 25px 5px;
+     display: block;
+     margin: auto auto !important;
+
+    }
     .bigPicture{
         padding: 10% 0;
     }
@@ -535,21 +457,6 @@ h2{
       .fcol>h2{
         display: block;
         padding-bottom: 10px;
-      }
-}
-@media screen and (max-width: 1350px) {
-    .row2{
-        max-width: 100%;
-        padding: 2em 1rem;
-    }}
-
-
-@media screen and (max-width: 1200px) {
-    .footer,.picCol, div.mainbox, .mainfooter , div.main-right , div.main-left  , .row1 , div.centered  , .redbox , .whitebox{
-     padding: 25px 5px;
-     display: block;
-     margin: auto auto !important;
-
     }
     div.main-left,div.main-right{
         width: 90%;
@@ -562,6 +469,7 @@ h2{
         width: 95%;
         margin: auto !important;
         display: block;
+        max-width: 100%;
     }
     .icon{
         right: 0;
@@ -572,10 +480,10 @@ h2{
      }
     
      .pictext{
-        padding: 25px 5px;
+        padding: 25px 0px;
         display: block;
         margin: auto auto !important;
-        width: calc(100% - 6em);
+        width: 100%;
      }
      .bigPictureLeft,.bigPictureRight{
         width: 100%;
@@ -620,22 +528,12 @@ h2{
     .fcol{
         width: 70%;
         display: block;
-        margin: 0 auto; 
          
     }
     p.red, p.white{
         padding: 20px 60px;
     }
-    div.frow{
-        margin: auto;
-        
-    }
-
-} 
-@media screen and (max-width: 700px) {
-    div.frow{max-width: 100%;}}
-@media screen and (max-width: 1200px) {
-     .fcol{
+    .fcol{
         display: flex;
         flex-wrap: wrap;
         width: min-content;
@@ -646,21 +544,11 @@ h2{
         position: relative;
         top: 0px;
     }
+    
 
-}
+} 
 
-@media screen and (max-width: 1100px) {
-    .smallpic{
-        top: -46px;
-        left: 40px;
-    }
-}
-@media screen and (max-width: 700px) {
-    .smallpic{
-        top: -110px;
-        left: 0;
-    }
-}
+
 
 @media screen and (max-width: 1000px) {
     div.fcol{
@@ -699,27 +587,6 @@ span.bar{
     toggle-button{
         display: flex;
     }
-    div.dropdown{
-        background-color: black;
-        display: none;
-        
-        
-    }
-    .dropdown{
-        text-align: center;
-    }
-   
-    .navbar{
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .dropdown{
-        display: inline-flex;
-        justify-content: center;
-        width: 100%;
-    }
-    
-    
 }
 
 
@@ -769,6 +636,49 @@ span.bar{
     font-size: 14px;
     line-height: 36px;
     color: #e5e5e5;
+}
+
+.containerWhite{
+    margin: auto !important;
+    max-width: 78em;
+    width: calc(100% - 6em);
+
+
+}
+.Bcontainer{
+    max-width: 21em;
+    margin: 2.5em;
+    min-width: 20em;
+}
+.textB{
+    min-width: 23em;
+    margin-bottom: 1em;
+}
+.icon1{
+    position: relative;
+    top: 3.6em;
+    right: 2.2em;
+    width: 23px;
+    filter: grayscale(50%);
+    height: 24px;
+}
+.rowINNER{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.MD{
+    text-decoration: none;
+    color: #c53a07;
+    font-size: 16px;
+}
+.MD:hover{border-bottom: 1px solid; transition: 0.5s;}
+
+@media screen and (max-width: 750px) {
+    .Bcontainer{
+        max-width: none;
+        margin: 1em;
+    }
 }
 
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-	<link th:with="rootpath=(${content.rootpath != null} ? ${content.rootpath} : '')" th:href="${rootpath}+'styles/style.css?v=2.6'" rel="stylesheet" />
-    <body>
+
+	
         <div th:fragment="footer">
         <footer class="footer">
         <div class="footercontainer">
@@ -54,9 +54,9 @@
                         <li><a href="pricing.html">Pricing</a>
                         <li><a href="">Supported TLDs</a>
                         <li><a href="">Update Schedule TLDs</a>
+                        <li><a href="">Sign Up</a>
                         <li><a href="">Sign In</a>
                         <li><a href="">Contact Us</a>
-                        <li><a href="">Site Map</a>
                         <li><a href="">Site Map</a>
                     </ul>
                 </div>
@@ -73,5 +73,5 @@
     </footer>
 
         </div>
-  	</body>
+  	
 </html>
