@@ -252,5 +252,10 @@ label#switch {
     font-family: 'Roboto', sans-serif;
     
 }
-
+.million{
+  display: inline;
+  color: orange;
+  font-size: 5px;
+  border: 1px solid black;
+}
 

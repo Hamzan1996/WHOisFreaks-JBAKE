@@ -189,10 +189,30 @@ fetch("https://billing.whoisfreaks.com/db_type/getdomain-whois-table-stat").then
 
         let countData="";
     
-    countData=`<div class="counts"><span class="nums" data-val=1986>0</span>Historical Data Since</div>
-            <div class="counts"><span class="nums" data-val=1387>0</span>TLDs</div>
-            <div class="counts"><span class="nums" data-val="${billings[0].totalDomains_no}"{'M+'}>0</span>Domains Tracked</div>
-            <div class="counts"><span class="nums" data-val=${billings[0].totalWhoisNo}<p>M+</p>>0</span>WHOIS Records</div>`
+    countData=`<div class="counts">
+    <div class="millionsss">
+        <span class="nums" data-val="1986">0</span>
+        <span></span>
+        </div>Domains Tracked</div>
+
+
+    <div class="counts">
+    <div class="millionsss">
+        <span class="nums" data-val="1387">0</span>
+        <span class="num">+</span>
+        </div>Domains Tracked</div>
+
+            <div class="counts">
+                <div class="millionsss">
+                    <span class="nums" data-val="${billings[0].totalDomains_no}">0</span>
+                    <span class="num">M+</span>
+                    </div>Domains Tracked</div>
+
+            <div class="counts">
+            <div class="millionsss">
+            <span class="nums" data-val=${billings[0].totalWhoisNo}>0</span>
+            <span class="num">M+</span>
+                    </div>Domains Tracked</div>`
 
             
             document.getElementById('counter').innerHTML=countData;
@@ -204,13 +224,14 @@ fetch("https://billing.whoisfreaks.com/db_type/getdomain-whois-table-stat").then
         valueDisplays.forEach((valueDisplays) =>{
             let startValue=0;
             let endValue = parseInt(valueDisplays.getAttribute("data-val"));
+            console.log('endValue',endValue)
             //console.log('func running');
             //console.log(endValue);
             let duration = Math.floor(interval/endValue);
             let counter = setInterval(function(){
                 startValue +=1;
                 valueDisplays.textContent=startValue;
-                if(startValue== endValue){
+                if(startValue== parseInt(endValue)){
                     clearInterval(counter);
                 }
             },duration,);

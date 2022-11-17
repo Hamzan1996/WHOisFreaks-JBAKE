@@ -681,4 +681,19 @@ span.bar{
     }
 }
 
+.millions span{
+    display: flex;
+    display: block;
+    color: rgba(255, 255, 255, 0.651);
+    font-size: 28px !important;
+    font-weight: 600;
+    line-height: 1.22;
+    margin-bottom: 10px;
+  }
+  .nums{
+    font-size: 28px !important;
+  }
+.num{
+    font-size: 28px !important;
+  }
 
