@@ -86,8 +86,9 @@
 const drpDwn = document.querySelector('#productsdrp');
 
 products.addEventListener('click', () => {
-
+    demodrpDwn.classList.remove('show');
     drpDwn.classList.toggle('show');
+    docsdrpDwn.classList.remove('show');
     console.log('drp open');
 
 
@@ -95,8 +96,8 @@ products.addEventListener('click', () => {
 const docs = document.querySelector('#docs');
 const docsdrpDwn = document.querySelector('#docsdrp');
 docs.addEventListener('click', () => {
-
-
+    demodrpDwn.classList.remove('show');
+    drpDwn.classList.remove('show');
     docsdrpDwn.classList.toggle('show');
     console.log('drp open');
 
@@ -106,8 +107,8 @@ docs.addEventListener('click', () => {
 const demo = document.querySelector('#demo');
 const demodrpDwn = document.querySelector('#demodrp');
 demo.addEventListener('click', () => {
-
-
+    docsdrpDwn.classList.remove('show');
+    drpDwn.classList.remove('show');
     demodrpDwn.classList.toggle('show');
     console.log('drp open');
 

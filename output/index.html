@@ -15,9 +15,6 @@
     <link href="styles/footer.css" rel="stylesheet" />
 
     <script src="scripts/js.js" ></script>
-    <script src="scripts/liveDataCounter.js" ></script>
-    <script src="scripts/loadTotalTLDs.js" ></script>
-    <script src="scripts/loadWhoisCount.js" ></script>
     <link rel="shortcut icon" href="/pics/logo.webp"/>
 
     </head>
@@ -106,8 +103,9 @@
 const drpDwn = document.querySelector('#productsdrp');
 
 products.addEventListener('click', () => {
-
+    demodrpDwn.classList.remove('show');
     drpDwn.classList.toggle('show');
+    docsdrpDwn.classList.remove('show');
     console.log('drp open');
 
 
@@ -115,8 +113,8 @@ products.addEventListener('click', () => {
 const docs = document.querySelector('#docs');
 const docsdrpDwn = document.querySelector('#docsdrp');
 docs.addEventListener('click', () => {
-
-
+    demodrpDwn.classList.remove('show');
+    drpDwn.classList.remove('show');
     docsdrpDwn.classList.toggle('show');
     console.log('drp open');
 
@@ -126,8 +124,8 @@ docs.addEventListener('click', () => {
 const demo = document.querySelector('#demo');
 const demodrpDwn = document.querySelector('#demodrp');
 demo.addEventListener('click', () => {
-
-
+    docsdrpDwn.classList.remove('show');
+    drpDwn.classList.remove('show');
     demodrpDwn.classList.toggle('show');
     console.log('drp open');
 
