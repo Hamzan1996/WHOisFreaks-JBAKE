@@ -180,14 +180,14 @@ fetch("https://billing.whoisfreaks.com/db_type/getdomain-whois-table-stat").then
     <div class="millionsss">
         <span class="nums" data-val="1986">0</span>
         <span></span>
-        </div>Domains Tracked</div>
+        </div>Historical Data Since</div>
 
 
     <div class="counts">
     <div class="millionsss">
         <span class="nums" data-val="${billings[0].domainWhoisTableStatId}">0</span>
         <span class="num">+</span>
-        </div>Domains Tracked</div>
+        </div>TLDs</div>
 
             <div class="counts">
                 <div class="millionsss">
@@ -199,7 +199,7 @@ fetch("https://billing.whoisfreaks.com/db_type/getdomain-whois-table-stat").then
             <div class="millionsss">
             <span class="nums" data-val=${billings[0].totalWhoisNo}>0</span>
             <span class="num">M+</span>
-                    </div>Domains Tracked</div>`
+                </div>WHOIS Records</div>`
 
             
             document.getElementById('counter').innerHTML=countData;
