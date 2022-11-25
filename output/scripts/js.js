@@ -63,8 +63,8 @@ window.onload = function () {
             let data0="";
             let data2="";
             let data3="";    
-            dataobj.slice(1, 9).map((values) =>{
-            
+            dataobj.map((values) =>{
+                saveData();
             
                 data0=`<div class="priceBox">
                 <div class="head">
@@ -85,7 +85,8 @@ window.onload = function () {
                     <button id="signUp">sign Up For Free!</button>
                 </div>
             </div>`
-
+                    if(values.interval=='month'){
+                        console.log('monthly is running');
                 data1+=`
                 <div class="priceBox">
                 <div class="head">
@@ -106,9 +107,9 @@ window.onload = function () {
                     <button id="signUp">sign Up For Free!</button>
                 </div>
             </div>`
-            })
+            }
 
-            dataobj.slice(9, 17).map((values) =>{
+            //dataobj.slice(9, 17).map((values) =>{
             discount=(Math.round(values.rate*(120/100)))  
             
                 data2=`<div class="priceBox">
@@ -130,7 +131,7 @@ window.onload = function () {
                     <button id="signUp">sign Up For Free!</button>
                 </div>
             </div>`
-
+            if(values.interval=='year'){
                 data3+=`
                 <div class="priceBox">
                 <div class="head">
@@ -151,22 +152,24 @@ window.onload = function () {
                     <button id="signUp">sign Up For Free!</button>
                 </div>
             </div>`
-            })
-
+            }})
+            
         
         //document.getElementById("card").innerHTML=data0+data1;
 
         function saveData(){
+            console.log('saveData running');
             sessionStorage.setItem('data0',data0);
             sessionStorage.setItem('data1',data1);
             sessionStorage.setItem('data2',data2);
             sessionStorage.setItem('data3',data3);
         };
-        saveData();
+        
         }).catch((error)=>{
             console.log(error);
         });
         sessionStorage.setItem("hasCodeRunBefore", true);
+        
     }};
 
 fetch("https://billing.whoisfreaks.com/db_type/getdomain-whois-table-stat").then((pricingdata)=>{
