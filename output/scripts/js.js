@@ -52,137 +52,122 @@ fetch(completeLink).then((data)=>{
     
     
 }
-fetch('https://billing.ipgeolocation.io/plan').then((data)=>{
-    return data.json();
+window.onload = function () {
+    if (sessionStorage.getItem("hasCodeRunBefore") === null) {
+        fetch('https://billing.ipgeolocation.io/plan').then((data)=>{
+            return data.json();
 
-}).then((dataobj)=>{
- 
-    let data1="";
-    let data0="";
-    let data2="";
-    let data3="";    
-    dataobj.slice(1, 9).map((values) =>{
-       
-    
-        data0=`<div class="priceBox">
-        <div class="head">
-        <div>
-                <h1 class="boxheading">developer</h1>
-                <h3 class="price">free</h3>
-                <p class="usage">For Non-ommercial Usage</p>
-                <div class="innerbox"></div>
-            </div> 
-        </div>
-        <div class="requests">
-            <h3 class="dark">30K requests per month</h3>
-        </div>
-        <div class="limit">
-            <p id="limit">1K Daily Limit</p>
-        </div>
-        <div class="button1">
-            <button id="signUp">sign Up For Free!</button>
-        </div>
-    </div>`
+        }).then((dataobj)=>{
+        
+            let data1="";
+            let data0="";
+            let data2="";
+            let data3="";    
+            dataobj.slice(1, 9).map((values) =>{
+            
+            
+                data0=`<div class="priceBox">
+                <div class="head">
+                <div>
+                        <h1 class="boxheading">developer</h1>
+                        <h3 class="price">free</h3>
+                        <p class="usage">For Non-ommercial Usage</p>
+                        <div class="innerbox"></div>
+                    </div> 
+                </div>
+                <div class="requests">
+                    <h3 class="dark">30K requests per month</h3>
+                </div>
+                <div class="limit">
+                    <p id="limit">1K Daily Limit</p>
+                </div>
+                <div class="button1">
+                    <button id="signUp">sign Up For Free!</button>
+                </div>
+            </div>`
 
-        data1+=`
-        <div class="priceBox">
-        <div class="head">
-           <div>
-                <h1 class="boxheading">${values.name}</h1>
-                <h3 class="price">$${values.rate} </h3>
-                <p class="usage">Per ${values.interval}*</p>
-                <div class="innerbox"></div>
-            </div> 
-        </div>
-        <div class="requests">
-            <h3 class="dark">${nFormatter(values.planApiUsageLimit.requests)} requests per ${values.interval}</h3>
-        </div>
-        <div class="limit">
-            <p id="limit">$${values.planApiUsageLimit.surchargeRate} per extra ${nFormatter(values.planApiUsageLimit.surchargeRequests)} requests </p>
-        </div>
-        <div class="button1">
-            <button id="signUp">sign Up For Free!</button>
-        </div>
-    </div>`
-    })
+                data1+=`
+                <div class="priceBox">
+                <div class="head">
+                <div>
+                        <h1 class="boxheading">${values.name}</h1>
+                        <h3 class="price">$${values.rate} </h3>
+                        <p class="usage">Per ${values.interval}*</p>
+                        <div class="innerbox"></div>
+                    </div> 
+                </div>
+                <div class="requests">
+                    <h3 class="dark">${nFormatter(values.planApiUsageLimit.requests)} requests per ${values.interval}</h3>
+                </div>
+                <div class="limit">
+                    <p id="limit">$${values.planApiUsageLimit.surchargeRate} per extra ${nFormatter(values.planApiUsageLimit.surchargeRequests)} requests </p>
+                </div>
+                <div class="button1">
+                    <button id="signUp">sign Up For Free!</button>
+                </div>
+            </div>`
+            })
 
-    dataobj.slice(9, 17).map((values) =>{
-    discount=(Math.round(values.rate*(120/100)))  
-    
-        data2=`<div class="priceBox">
-        <div class="head">
-        <div>
-                <h1 class="boxheading">developer</h1>
-                <h3 class="price">free</h3>
-                <p class="usage">For Non-ommercial Usage</p>
-                <div class="innerbox"></div>
-            </div> 
-        </div>
-        <div class="requests">
-            <h3 class="dark">30K requests per month</h3>
-        </div>
-        <div class="limit">
-            <p id="limit">1K Daily Limit</p>
-        </div>
-        <div class="button1">
-            <button id="signUp">sign Up For Free!</button>
-        </div>
-    </div>`
+            dataobj.slice(9, 17).map((values) =>{
+            discount=(Math.round(values.rate*(120/100)))  
+            
+                data2=`<div class="priceBox">
+                <div class="head">
+                <div>
+                        <h1 class="boxheading">developer</h1>
+                        <h3 class="price">free</h3>
+                        <p class="usage">For Non-ommercial Usage</p>
+                        <div class="innerbox"></div>
+                    </div> 
+                </div>
+                <div class="requests">
+                    <h3 class="dark">30K requests per month</h3>
+                </div>
+                <div class="limit">
+                    <p id="limit">1K Daily Limit</p>
+                </div>
+                <div class="button1">
+                    <button id="signUp">sign Up For Free!</button>
+                </div>
+            </div>`
 
-        data3+=`
-        <div class="priceBox">
-        <div class="head">
-           <div>
-                <h1 class="boxheading">${values.name}</h1>
-                <h3 class="price">$${values.rate} <span class="discount"><del>$${discount}</del></span></h3>
-                <p class="usage">Per ${values.interval}*</p>
-                <div class="innerbox"></div>
-            </div> 
-        </div>
-        <div class="requests">
-            <h3 class="dark">${nFormatter(values.planApiUsageLimit.requests)} requests per ${values.interval}</h3>
-        </div>
-        <div class="limit">
-            <p id="limit">$${values.planApiUsageLimit.surchargeRate} per extra ${nFormatter(values.planApiUsageLimit.surchargeRequests)} requests </p>
-        </div>
-        <div class="button1">
-            <button id="signUp">sign Up For Free!</button>
-        </div>
-    </div>`
-    })
+                data3+=`
+                <div class="priceBox">
+                <div class="head">
+                <div>
+                        <h1 class="boxheading">${values.name}</h1>
+                        <h3 class="price">$${values.rate} <span class="discount"><del>$${discount}</del></span></h3>
+                        <p class="usage">Per ${values.interval}*</p>
+                        <div class="innerbox"></div>
+                    </div> 
+                </div>
+                <div class="requests">
+                    <h3 class="dark">${nFormatter(values.planApiUsageLimit.requests)} requests per ${values.interval}</h3>
+                </div>
+                <div class="limit">
+                    <p id="limit">$${values.planApiUsageLimit.surchargeRate} per extra ${nFormatter(values.planApiUsageLimit.surchargeRequests)} requests </p>
+                </div>
+                <div class="button1">
+                    <button id="signUp">sign Up For Free!</button>
+                </div>
+            </div>`
+            })
 
- 
-//document.getElementById("card").innerHTML=data0+data1;
+        
+        //document.getElementById("card").innerHTML=data0+data1;
 
-function saveData(){
-    sessionStorage.setItem('data0',data0);
-    sessionStorage.setItem('data1',data1);
-    sessionStorage.setItem('data2',data2);
-    sessionStorage.setItem('data3',data3);
-};
-window.onload=saveData();
-
-const togler=document.getElementById("ym");
-
-togler.addEventListener('change', YorM);
-function YorM(){
-    if(togler.checked){
-        sessionStorage.setItem("status",togler.checked);
-        return document.getElementById("card").innerHTML=sessionStorage.getItem("data2")+sessionStorage.getItem("data3");
-    }
-    else{
-        sessionStorage.setItem("status",false);
-        return document.getElementById("card").innerHTML=sessionStorage.getItem("data0")+sessionStorage.getItem("data1");
-    }
-    
- };
- 
- 
-
-
-}).catch((error)=>{
-    console.log(error);
-});
+        function saveData(){
+            sessionStorage.setItem('data0',data0);
+            sessionStorage.setItem('data1',data1);
+            sessionStorage.setItem('data2',data2);
+            sessionStorage.setItem('data3',data3);
+        };
+        saveData();
+        }).catch((error)=>{
+            console.log(error);
+        });
+        sessionStorage.setItem("hasCodeRunBefore", true);
+    }};
 
 fetch("https://billing.whoisfreaks.com/db_type/getdomain-whois-table-stat").then((pricingdata)=>{
     return pricingdata.json();

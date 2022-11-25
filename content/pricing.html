@@ -35,6 +35,22 @@ description=WHOIS Freaks api Pricing .
             </div>
         </div>
     </div>
+    <script>
+        const togler=document.getElementById("ym");
+
+togler.addEventListener('change', YorM);
+function YorM(){
+    if(togler.checked){
+        sessionStorage.setItem("status",togler.checked);
+        return document.getElementById("card").innerHTML=sessionStorage.getItem("data2")+sessionStorage.getItem("data3");
+    }
+    else{
+        sessionStorage.setItem("status",false);
+        return document.getElementById("card").innerHTML=sessionStorage.getItem("data0")+sessionStorage.getItem("data1");
+    }
+    
+};
+    </script>
 </body>
     
 
