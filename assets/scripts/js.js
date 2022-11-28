@@ -9,64 +9,64 @@ function showInput() {
 }
 
 function nFormatter(num) {
-     if (num >= 1000000000) {
+    if (num >= 1000000000) {
         return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'B';
-     }
-     if (num >= 1000000) {
+    }
+    if (num >= 1000000) {
         return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
-     }
-     if (num >= 1000) {
+    }
+    if (num >= 1000) {
         return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
-     }
-     return num;
+    }
+    return num;
 }
 
-function showAPI(){
+function showAPI() {
 
-    let result=[];
-    
+    let result = [];
 
-    let baseLink ='https://api.whoisfreaks.com/v1.0/whois?apiKey=6a1ce88d99304a8a9cc2c89ff0283643&whois=live&domainName=';
-    let postLink ='&format=JSON';
-    let userinput=document.getElementById('popup').value;
-    let completeLink = baseLink + userinput ;
+
+    let baseLink = 'https://api.whoisfreaks.com/v1.0/whois?apiKey=6a1ce88d99304a8a9cc2c89ff0283643&whois=live&domainName=';
+    let postLink = '&format=JSON';
+    let userinput = document.getElementById('popup').value;
+    let completeLink = baseLink + userinput;
 
     console.log(completeLink)
-    
 
-fetch(completeLink).then((data)=>{
-    return data.json();
-    console.log('data');
-    console.log(data);
-}).then((textdata)=>{
-    console.log('data after json');
-    console.log(textdata);
-    let data12=JSON.stringify(textdata,null,4)
 
-    var myDiv = document.getElementById("inertext");
-    myDiv.innerHTML = data12;
-    
-    }).catch((err)=>{
+    fetch(completeLink).then((data) => {
+        return data.json();
+        console.log('data');
+        console.log(data);
+    }).then((textdata) => {
+        console.log('data after json');
+        console.log(textdata);
+        let data12 = JSON.stringify(textdata, null, 4)
+
+        var myDiv = document.getElementById("inertext");
+        myDiv.innerHTML = data12;
+
+    }).catch((err) => {
         console.log(err);
     });
-    
-    
+
+
 }
 function showBilling() {
     if (sessionStorage.getItem("hasCodeRunBefore") === null) {
-        fetch('https://billing.ipgeolocation.io/plan').then((data)=>{
+        fetch('https://billing.ipgeolocation.io/plan').then((data) => {
             return data.json();
 
-        }).then((dataobj)=>{
-        
-            let data1="";
-            let data0="";
-            let data2="";
-            let data3="";    
-            dataobj.map((values) =>{
+        }).then((dataobj) => {
+
+            let data1 = "";
+            let data0 = "";
+            let data2 = "";
+            let data3 = "";
+            dataobj.map((values) => {
                 saveData();
                 onloadis();
-                data0=`<div class="priceBox">
+                data0 = `<div class="priceBox">
                 <div class="head">
                 <div>
                         <h1 class="boxheading">developer</h1>
@@ -85,9 +85,9 @@ function showBilling() {
                     <button id="signUp">sign Up For Free!</button>
                 </div>
             </div>`
-                    if(values.interval=='month'){
-                        
-                data1+=`
+                if (values.interval == 'month') {
+
+                    data1 += `
                 <div class="priceBox">
                 <div class="head">
                 <div>
@@ -107,12 +107,12 @@ function showBilling() {
                     <button id="signUp">sign Up For Free!</button>
                 </div>
             </div>`
-            }
+                }
 
 
-            discount=(Math.round(values.rate*(120/100)))  
-            
-                data2=`<div class="priceBox">
+                discount = (Math.round(values.rate * (120 / 100)))
+
+                data2 = `<div class="priceBox">
                 <div class="head">
                 <div>
                         <h1 class="boxheading">developer</h1>
@@ -131,8 +131,8 @@ function showBilling() {
                     <button id="signUp">sign Up For Free!</button>
                 </div>
             </div>`
-            if(values.interval=='year'){
-                data3+=`
+                if (values.interval == 'year') {
+                    data3 += `
                 <div class="priceBox">
                 <div class="head">
                 <div>
@@ -152,33 +152,35 @@ function showBilling() {
                     <button id="signUp">sign Up For Free!</button>
                 </div>
             </div>`
-            }})
-            
-        
+                }
+            })
 
-        function saveData(){
-            sessionStorage.setItem('data0',data0);
-            sessionStorage.setItem('data1',data1);
-            sessionStorage.setItem('data2',data2);
-            sessionStorage.setItem('data3',data3);
-        };
-        
-        }).catch((error)=>{
+
+
+            function saveData() {
+                sessionStorage.setItem('data0', data0);
+                sessionStorage.setItem('data1', data1);
+                sessionStorage.setItem('data2', data2);
+                sessionStorage.setItem('data3', data3);
+            };
+
+        }).catch((error) => {
             console.log(error);
         });
         sessionStorage.setItem("hasCodeRunBefore", true);
-        
-    }};
-function showCount(){
+
+    }
+};
+function showCount() {
     if (sessionStorage.getItem("hasCountRunBefore") === null) {
-fetch("https://billing.whoisfreaks.com/db_type/getdomain-whois-table-stat").then((pricingdata)=>{
-    return pricingdata.json();
+        fetch("https://billing.whoisfreaks.com/db_type/getdomain-whois-table-stat").then((pricingdata) => {
+            return pricingdata.json();
 
-    }).then((billings)=>{
+        }).then((billings) => {
 
-        let countData="";
-    
-        countData = `<div class="counts">
+            let countData = "";
+
+            countData = `<div class="counts">
     <div class="millionsss">
         <span class="nums" data-val="1986">0</span>
         <span></span>
@@ -203,56 +205,59 @@ fetch("https://billing.whoisfreaks.com/db_type/getdomain-whois-table-stat").then
             <span class="num">M+</span>
                 </div>WHOIS Records</div>`
 
-            sessionStorage.setItem("countData",countData);
-            document.getElementById('counter').innerHTML=countData;
-        
-       
+            sessionStorage.setItem("countData", countData);
+            document.getElementById('counter').innerHTML = countData;
+
+
 
             numCounter();
 
-    }).catch((err)=>{
-        console.log(err);
-    });
-    sessionStorage.setItem("hasCountRunBefore", true);}};
-    
-    
-    function onloadis(){
-        const togler=document.getElementById("ym");
-        const status1=sessionStorage.getItem("status");
-        if(status1=="true"){
-            togler.setAttribute("checked","checked");
-            document.getElementById("card").innerHTML=sessionStorage.getItem("data2")+sessionStorage.getItem("data3");
-            
-        }else{
-            document.getElementById("card").innerHTML=sessionStorage.getItem("data0")+sessionStorage.getItem("data1");
-            
-        
-        }
-     };
+        }).catch((err) => {
+            console.log(err);
+        });
+        sessionStorage.setItem("hasCountRunBefore", true);
+    }
+};
 
-     function loadCount(){
-        
-        document.getElementById('counter').innerHTML=sessionStorage.getItem("countData");
-    
-   
+
+function onloadis() {
+    const togler = document.getElementById("ym");
+    const status1 = sessionStorage.getItem("status");
+    if (status1 == "true") {
+        togler.setAttribute("checked", "checked");
+        document.getElementById("card").innerHTML = sessionStorage.getItem("data2") + sessionStorage.getItem("data3");
+
+    } else {
+        document.getElementById("card").innerHTML = sessionStorage.getItem("data0") + sessionStorage.getItem("data1");
+
+
+    }
+};
+
+function loadCount() {
+
+    document.getElementById('counter').innerHTML = sessionStorage.getItem("countData");
+
+
     numCounter();
-    };
-    function numCounter(){
-        let valueDisplays =document.querySelectorAll('.nums');
-        let interval = 10000;
-        valueDisplays.forEach((valueDisplays) =>{
-            let startValue=0;
-            let endValue = parseInt(valueDisplays.getAttribute("data-val"));
-            console.log('endValue',endValue)
-           
-            let duration = Math.floor(interval/endValue);
-            let counter = setInterval(function(){
-                startValue +=1;
-                valueDisplays.textContent=startValue;
-                if(startValue== parseInt(endValue)){
-                    clearInterval(counter);
-                }
-            },duration);
-         })}
+};
+function numCounter() {
+    let valueDisplays = document.querySelectorAll('.nums');
+    let interval = 10000;
+    valueDisplays.forEach((valueDisplays) => {
+        let startValue = 0;
+        let endValue = parseInt(valueDisplays.getAttribute("data-val"));
+        console.log('endValue', endValue)
+
+        let duration = Math.floor(interval / endValue);
+        let counter = setInterval(function () {
+            startValue += 1;
+            valueDisplays.textContent = startValue;
+            if (startValue == parseInt(endValue)) {
+                clearInterval(counter);
+            }
+        }, duration);
+    })
+}
 
 
