@@ -208,22 +208,7 @@ fetch("https://billing.whoisfreaks.com/db_type/getdomain-whois-table-stat").then
         
        
 
-        let valueDisplays =document.querySelectorAll('.nums');
-        let interval = 10000;
-        valueDisplays.forEach((valueDisplays) =>{
-            let startValue=0;
-            let endValue = parseInt(valueDisplays.getAttribute("data-val"));
-            console.log('endValue',endValue)
-           
-            let duration = Math.floor(interval/endValue);
-            let counter = setInterval(function(){
-                startValue +=1;
-                valueDisplays.textContent=startValue;
-                if(startValue== parseInt(endValue)){
-                    clearInterval(counter);
-                }
-            },duration,);
-        })
+            numCounter();
 
     }).catch((err)=>{
         console.log(err);
@@ -250,24 +235,24 @@ fetch("https://billing.whoisfreaks.com/db_type/getdomain-whois-table-stat").then
         document.getElementById('counter').innerHTML=sessionStorage.getItem("countData");
     
    
-
-    let valueDisplays =document.querySelectorAll('.nums');
-    let interval = 10000;
-    valueDisplays.forEach((valueDisplays) =>{
-        let startValue=0;
-        let endValue = parseInt(valueDisplays.getAttribute("data-val"));
-        console.log('endValue',endValue)
-       
-        let duration = Math.floor(interval/endValue);
-        let counter = setInterval(function(){
-            startValue +=1;
-            valueDisplays.textContent=startValue;
-            if(startValue== parseInt(endValue)){
-                clearInterval(counter);
-            }
-        },duration);
-     }
-    )};
-    
+    numCounter();
+    };
+    function numCounter(){
+        let valueDisplays =document.querySelectorAll('.nums');
+        let interval = 10000;
+        valueDisplays.forEach((valueDisplays) =>{
+            let startValue=0;
+            let endValue = parseInt(valueDisplays.getAttribute("data-val"));
+            console.log('endValue',endValue)
+           
+            let duration = Math.floor(interval/endValue);
+            let counter = setInterval(function(){
+                startValue +=1;
+                valueDisplays.textContent=startValue;
+                if(startValue== parseInt(endValue)){
+                    clearInterval(counter);
+                }
+            },duration);
+         })}
 
 
