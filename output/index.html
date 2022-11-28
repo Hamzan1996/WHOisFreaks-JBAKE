@@ -135,7 +135,7 @@ demo.addEventListener('click', () => {
         </script>
 </header> 
 
-		<div><body> 
+		<div><body onload="showCount()"> 
     <div class="mainboxwrapper background">
         <div class="mainbox">
             <div class="main-left">
@@ -477,6 +477,10 @@ demo.addEventListener('click', () => {
 
 
     </div>
+    <script>
+        window.addEventListener('load',loadCount());
+    </script>
+</body>
 
 
 

@@ -5,7 +5,7 @@ status=published
 
 
 ~~~~~~
-<body> 
+<body onload="showCount()"> 
     <div class="mainboxwrapper background">
         <div class="mainbox">
             <div class="main-left">
@@ -347,6 +347,10 @@ status=published
 
 
     </div>
+    <script>
+        window.addEventListener('load',loadCount());
+    </script>
+</body>
 
 
 

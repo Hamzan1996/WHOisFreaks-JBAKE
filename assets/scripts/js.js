@@ -52,7 +52,7 @@ fetch(completeLink).then((data)=>{
     
     
 }
-window.onload = function () {
+function showBilling() {
     if (sessionStorage.getItem("hasCodeRunBefore") === null) {
         fetch('https://billing.ipgeolocation.io/plan').then((data)=>{
             return data.json();
@@ -65,7 +65,7 @@ window.onload = function () {
             let data3="";    
             dataobj.map((values) =>{
                 saveData();
-            
+                onloadis();
                 data0=`<div class="priceBox">
                 <div class="head">
                 <div>
@@ -86,7 +86,7 @@ window.onload = function () {
                 </div>
             </div>`
                     if(values.interval=='month'){
-                        console.log('monthly is running');
+                        
                 data1+=`
                 <div class="priceBox">
                 <div class="head">
@@ -109,7 +109,7 @@ window.onload = function () {
             </div>`
             }
 
-            //dataobj.slice(9, 17).map((values) =>{
+
             discount=(Math.round(values.rate*(120/100)))  
             
                 data2=`<div class="priceBox">
@@ -155,10 +155,8 @@ window.onload = function () {
             }})
             
         
-        //document.getElementById("card").innerHTML=data0+data1;
 
         function saveData(){
-            console.log('saveData running');
             sessionStorage.setItem('data0',data0);
             sessionStorage.setItem('data1',data1);
             sessionStorage.setItem('data2',data2);
@@ -171,7 +169,8 @@ window.onload = function () {
         sessionStorage.setItem("hasCodeRunBefore", true);
         
     }};
-
+function showCount(){
+    if (sessionStorage.getItem("hasCountRunBefore") === null) {
 fetch("https://billing.whoisfreaks.com/db_type/getdomain-whois-table-stat").then((pricingdata)=>{
     return pricingdata.json();
 
@@ -204,7 +203,7 @@ fetch("https://billing.whoisfreaks.com/db_type/getdomain-whois-table-stat").then
             <span class="num">M+</span>
                 </div>WHOIS Records</div>`
 
-            
+            sessionStorage.setItem("countData",countData);
             document.getElementById('counter').innerHTML=countData;
         
        
@@ -229,24 +228,46 @@ fetch("https://billing.whoisfreaks.com/db_type/getdomain-whois-table-stat").then
     }).catch((err)=>{
         console.log(err);
     });
-
+    sessionStorage.setItem("hasCountRunBefore", true);}};
     
     
     function onloadis(){
         const togler=document.getElementById("ym");
         const status1=sessionStorage.getItem("status");
         if(status1=="true"){
-            console.log("true");
             togler.setAttribute("checked","checked");
             document.getElementById("card").innerHTML=sessionStorage.getItem("data2")+sessionStorage.getItem("data3");
             
         }else{
-            console.log("false");
             document.getElementById("card").innerHTML=sessionStorage.getItem("data0")+sessionStorage.getItem("data1");
             
         
         }
+     };
+
+     function loadCount(){
+        
+        document.getElementById('counter').innerHTML=sessionStorage.getItem("countData");
+    
+   
+
+    let valueDisplays =document.querySelectorAll('.nums');
+    let interval = 10000;
+    valueDisplays.forEach((valueDisplays) =>{
+        let startValue=0;
+        let endValue = parseInt(valueDisplays.getAttribute("data-val"));
+        console.log('endValue',endValue)
+       
+        let duration = Math.floor(interval/endValue);
+        let counter = setInterval(function(){
+            startValue +=1;
+            valueDisplays.textContent=startValue;
+            if(startValue== parseInt(endValue)){
+                clearInterval(counter);
+            }
+        },duration);
      }
+    )};
     
 
 
