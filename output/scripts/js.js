@@ -61,33 +61,34 @@ function showBilling() {
 
             let data1 = "";
             let data0 = "";
-            let data2 = "";
             let data3 = "";
-            dataobj.map((values) => {
-                saveData();
-                onloadis();
-                data0 = `<div class="priceBox">
-                <div class="head">
-                <div>
-                        <h1 class="boxheading">developer</h1>
-                        <h3 class="price">free</h3>
-                        <p class="usage">For Non-ommercial Usage</p>
-                        <div class="innerbox"></div>
-                    </div> 
-                </div>
-                <div class="requests">
-                    <h3 class="dark">30K requests per month</h3>
-                </div>
-                <div class="limit">
-                    <p id="limit">1K Daily Limit</p>
-                </div>
-                <div class="button1">
-                    <button id="signUp">sign Up For Free!</button>
-                </div>
-            </div>`
-                if (values.interval == 'month') {
 
-                    data1 += `
+            data0 = `<div class="priceBox">
+            <div class="head">
+            <div>
+                    <h1 class="boxheading">developer</h1>
+                    <h3 class="price">free</h3>
+                    <p class="usage">For Non-ommercial Usage</p>
+                    <div class="innerbox"></div>
+                </div> 
+            </div>
+            <div class="requests">
+                <h3 class="dark">30K requests per month</h3>
+            </div>
+            <div class="limit">
+                <p id="limit">1K Daily Limit</p>
+            </div>
+            <div class="button1">
+                <button id="signUp">sign Up For Free!</button>
+            </div>
+        </div>`
+            
+        dataobj.map((values) => {
+            saveData();
+            onloadis();
+               
+            if (values.interval == 'month') {
+                data1 += `
                 <div class="priceBox">
                 <div class="head">
                 <div>
@@ -106,32 +107,12 @@ function showBilling() {
                 <div class="button1">
                     <button id="signUp">sign Up For Free!</button>
                 </div>
-            </div>`
-                }
+                </div>`
+            }
+            
+            discount = (Math.round(values.rate * (120 / 100)))
 
-
-                discount = (Math.round(values.rate * (120 / 100)))
-
-                data2 = `<div class="priceBox">
-                <div class="head">
-                <div>
-                        <h1 class="boxheading">developer</h1>
-                        <h3 class="price">free</h3>
-                        <p class="usage">For Non-ommercial Usage</p>
-                        <div class="innerbox"></div>
-                    </div> 
-                </div>
-                <div class="requests">
-                    <h3 class="dark">30K requests per month</h3>
-                </div>
-                <div class="limit">
-                    <p id="limit">1K Daily Limit</p>
-                </div>
-                <div class="button1">
-                    <button id="signUp">sign Up For Free!</button>
-                </div>
-            </div>`
-                if (values.interval == 'year') {
+            if (values.interval == 'year') {
                     data3 += `
                 <div class="priceBox">
                 <div class="head">
@@ -152,15 +133,14 @@ function showBilling() {
                     <button id="signUp">sign Up For Free!</button>
                 </div>
             </div>`
-                }
-            })
+            }
+            });
 
 
 
             function saveData() {
                 sessionStorage.setItem('data0', data0);
                 sessionStorage.setItem('data1', data1);
-                sessionStorage.setItem('data2', data2);
                 sessionStorage.setItem('data3', data3);
             };
 
@@ -225,7 +205,7 @@ function onloadis() {
     const status1 = sessionStorage.getItem("status");
     if (status1 == "true") {
         togler.setAttribute("checked", "checked");
-        document.getElementById("card").innerHTML = sessionStorage.getItem("data2") + sessionStorage.getItem("data3");
+        document.getElementById("card").innerHTML = sessionStorage.getItem("data0") + sessionStorage.getItem("data3");
 
     } else {
         document.getElementById("card").innerHTML = sessionStorage.getItem("data0") + sessionStorage.getItem("data1");
